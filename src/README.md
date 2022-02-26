@@ -39,9 +39,8 @@
 --
 ------------------------------------------------------------------------------->
 
-# `./blank/`
+# `./src/`
 
-This directory contains a set of miscellaneous empty files for various purposes.
-These files can be considered templates and can be altered as required.
+This is the main source code directory of the repository.
 
 <!----------------------------------------------------------------------------->
