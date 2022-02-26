@@ -75,6 +75,7 @@ invoked by calling `repository-manual.m`.
 
 | Requirement       | Type          | Role                              |
 |:------------------|:-------------:|:----------------------------------|
+| `docs-snippets`   | repository    | documentation constants           |
 | GNU Octave        | application   | execution of the provided scripts |
 | Pandoc            | application   | compilation of repository manual  |
 | `texlive-full`    | package       | compilation of repository manual  |
