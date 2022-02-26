@@ -71,4 +71,25 @@ When compiling a printable version of this documentation using Pandoc, the full
 license will be attached automatically to the resulting document.  This can be
 invoked by calling `repository-manual.m`.
 
+## Software Requirements
+
+| Requirement       | Type          | Role                              |
+|:------------------|:-------------:|:----------------------------------|
+| GNU Octave        | application   | execution of the provided scripts |
+| Pandoc            | application   | compilation of repository manual  |
+| `texlive-full`    | package       | compilation of repository manual  |
+
+The compilation of such an **optional** repository manual can be invoked by just
+calling one of the following lines in a terminal.
+
+```
+octave repository-manual.m
+octave-cli repository-manual.m
+```
+
+Both will redirect to the same application, GNU Octave, which will then create
+the manual for this repository and attach the entire license to it.  The
+resulting file, `repository.pdf`, will be saved in the main directory of this
+repository.
+
 <!----------------------------------------------------------------------------->
