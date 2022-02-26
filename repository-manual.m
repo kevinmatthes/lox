@@ -83,6 +83,7 @@ files.source        = [files.source directories.yaml manual.paper '.yaml '];
 files.source        = [files.source directories.yaml manual.style '.yaml '];
 files.source        = [files.source files.newpage];
 files.source        = [files.source ' ./README.md '];
+files.source        = [files.source ' ./src/README.md '];
 files.source        = [files.source files.newpage];
 files.source        = [files.source files.license];
 files.source        = [files.source files.newpage];
