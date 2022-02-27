@@ -18,13 +18,15 @@
 
 /**
  * \author      Kevin Matthes
- * \brief       .
+ * \brief       The main source file.
  * \copyright   (C) 2022 Kevin Matthes.
  *              This file is licensed GPL 2 as of June 1991.
  * \date        2022
- * \file        .c
+ * \file        main.c
  * \note        See `LICENSE' for full license.
  *              See `README.md' for project details.
+ *
+ * This function introduces the `main` function of the Lox compiler.
  */
 
 /******************************************************************************/
@@ -33,14 +35,24 @@
  * Includes.
  */
 
-// .
+#include "common.h"
 
 
 
 /**
+ * \brief   The main function of the application.
+ * \param   argc    The count of command line arguments.
+ * \param   args    The command line arguments.
+ * \return  The application status.
  *
+ * This is the main function of the Lox compiler.
+ *
+ * In case anything went as it should have had to, `0` will be returned.
  */
 
-// .
+int main (const int argc, const char ** args)
+{
+    return 0x0;
+}
 
 /******************************************************************************/
