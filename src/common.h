@@ -18,13 +18,16 @@
 
 /**
  * \author      Kevin Matthes
- * \brief       .
+ * \brief       The main header file.
  * \copyright   (C) 2022 Kevin Matthes.
  *              This file is licensed GPL 2 as of June 1991.
  * \date        2022
- * \file        .h
+ * \file        common.h
  * \note        See `LICENSE' for full license.
  *              See `README.md' for project details.
+ *
+ * This is the main header file of the Lox compiler, providing the most
+ * important resources.
  */
 
 /******************************************************************************/
@@ -34,8 +37,8 @@
  */
 
 #pragma once
-#ifndef ___H__
-#define ___H__
+#ifndef __LOX__COMMON_H__
+#define __LOX__COMMON_H__
 
 
 
@@ -43,7 +46,10 @@
  * Includes.
  */
 
-// .
+// The C standard library.
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
 
 
 
@@ -76,10 +82,10 @@
  */
 
 // Tidying up.
-#ifndef ___INTERNAL__
-#endif  // ! ___INTERNAL__
+#ifndef __LOX_INTERNAL__
+#endif  // ! __LOX_INTERNAL__
 
 // Leaving the header.
-#endif  // ! ___H__
+#endif  // ! __LOX__COMMON_H__
 
 /******************************************************************************/
