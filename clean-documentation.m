@@ -50,7 +50,7 @@
 doxygen.outdir  = './src/';
 
 doxygen.html.search = [doxygen.outdir 'html/search/'];
-doyxgen.html.self   = [doxygen.outdir 'html/'];
+doxygen.html.self   = [doxygen.outdir 'html/'];
 doxygen.latex.self  = [doxygen.outdir 'latex/'];
 
 
