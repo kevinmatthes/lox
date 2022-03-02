@@ -65,8 +65,8 @@ files.refman.pdf    = [directories.doxygen.make 'refman.pdf'];
 files.refman.tex    = [directories.doxygen.make 'refman.tex'];
 
 files.self      = 'doxygen.m';
-files.source    = '';
-files.target    = '';
+files.source    = 'lox.doxygen.cfg';
+files.target    = 'lox.pdf';
 
 
 
