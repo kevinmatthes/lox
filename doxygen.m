@@ -56,7 +56,7 @@ software.make.call  = [software.make.self software.make.flags];
 
 
 % Directories.
-directories.doxygen.make    = '';
+directories.doxygen.make    = './src/latex/';
 
 
 
