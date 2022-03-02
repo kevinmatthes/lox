@@ -18,31 +18,19 @@
 
 /**
  * \author      Kevin Matthes
- * \brief       The bytecode utilities.
+ * \brief       The docstrings for include macros.
  * \copyright   (C) 2022 Kevin Matthes.
  *              This file is licensed GPL 2 as of June 1991.
  * \date        2022
- * \file        chunk.c
+ * \file        pragma_once.dox
  * \note        See `LICENSE' for full license.
  *              See `README.md' for project details.
  *
- * This file implements the bytecode utilities.
+ * This file provides the documentation information regarding the macros which
+ * shall prevent their headers from being included multiple times in addition to
+ * `#pragma once`.
  */
 
 /******************************************************************************/
-
-/*
- * Includes.
- */
-
-// .
-
-
-
-/**
- *
- */
-
-// .
 
 /******************************************************************************/
