@@ -76,8 +76,8 @@
  */
 
 // Tidying up.
-#ifndef ___INTERNAL__
-#endif  // ! ___INTERNAL__
+#ifndef __LOX_INTERNAL__
+#endif  // ! __LOX_INTERNAL__
 
 // Leaving the header.
 #endif  // ! ___H__
