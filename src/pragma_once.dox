@@ -33,7 +33,39 @@
 
 /******************************************************************************/
 
+/*! \def    __LOX__CHUNK_H__
+ * \brief   Prevent this header from being included twice.
+ *
+ * In case this header file should be included more than just once, unexpected
+ * side effects might take place.  This unintended behaviour will be avoided by
+ * the definition of this macro.
+ */
+
 /*! \def    __LOX__COMMON_H__
+ * \brief   Prevent this header from being included twice.
+ *
+ * In case this header file should be included more than just once, unexpected
+ * side effects might take place.  This unintended behaviour will be avoided by
+ * the definition of this macro.
+ */
+
+/*! \def    __LOX__DEBUG_H__
+ * \brief   Prevent this header from being included twice.
+ *
+ * In case this header file should be included more than just once, unexpected
+ * side effects might take place.  This unintended behaviour will be avoided by
+ * the definition of this macro.
+ */
+
+/*! \def    __LOX__MEMORY_H__
+ * \brief   Prevent this header from being included twice.
+ *
+ * In case this header file should be included more than just once, unexpected
+ * side effects might take place.  This unintended behaviour will be avoided by
+ * the definition of this macro.
+ */
+
+/*! \def    __LOX__VALUE_H__
  * \brief   Prevent this header from being included twice.
  *
  * In case this header file should be included more than just once, unexpected

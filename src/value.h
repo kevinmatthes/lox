@@ -36,8 +36,8 @@
  */
 
 #pragma once
-#ifndef __LOX__VALUES_H__
-#define __LOX__VALUES_H__
+#ifndef __LOX__VALUE_H__
+#define __LOX__VALUE_H__
 
 
 
@@ -82,6 +82,6 @@
 #endif  // ! __LOX_INTERNAL__
 
 // Leaving the header.
-#endif  // ! __LOX__VALUES_H__
+#endif  // ! __LOX__VALUE_H__
 
 /******************************************************************************/
