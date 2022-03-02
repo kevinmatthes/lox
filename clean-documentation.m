@@ -77,7 +77,7 @@ disp ([banner 'Begin build instruction.']);
 
 
 % Remove common Doxygen directories.
-fprintf ([banner 'Check for and remove Doxygen directories ...']);
+fprintf ([banner 'Check for and remove Doxygen directories ... ']);
 
 if length (glob (doxygen.html.search));
     if length (glob ([doxygen.html.search '*']));
