@@ -36,8 +36,8 @@
  */
 
 #pragma once
-#ifndef ___H__
-#define ___H__
+#ifndef __LOX__MEMORY_H__
+#define __LOX__MEMORY_H__
 
 
 
@@ -82,6 +82,6 @@
 #endif  // ! __LOX_INTERNAL__
 
 // Leaving the header.
-#endif  // ! ___H__
+#endif  // ! __LOX__MEMORY_H__
 
 /******************************************************************************/
