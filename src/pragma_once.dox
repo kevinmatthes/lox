@@ -28,7 +28,7 @@
  *
  * This file provides the documentation information regarding the macros which
  * shall prevent their headers from being included multiple times in addition to
- * `#pragma once`.
+ * the `pragma` instruction `once`.
  */
 
 /******************************************************************************/
