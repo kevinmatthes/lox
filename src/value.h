@@ -18,13 +18,15 @@
 
 /**
  * \author      Kevin Matthes
- * \brief       .
+ * \brief       The constant utilities.
  * \copyright   (C) 2022 Kevin Matthes.
  *              This file is licensed GPL 2 as of June 1991.
  * \date        2022
  * \file        value.h
  * \note        See `LICENSE' for full license.
  *              See `README.md' for project details.
+ *
+ * This file introduces the constant utilities.
  */
 
 /******************************************************************************/
@@ -34,8 +36,8 @@
  */
 
 #pragma once
-#ifndef ___H__
-#define ___H__
+#ifndef __LOX__VALUES_H__
+#define __LOX__VALUES_H__
 
 
 
@@ -80,6 +82,6 @@
 #endif  // ! __LOX_INTERNAL__
 
 // Leaving the header.
-#endif  // ! ___H__
+#endif  // ! __LOX__VALUES_H__
 
 /******************************************************************************/
