@@ -47,7 +47,7 @@
 %%%%
 
 % Doxygen settings.
-doxygen.outdir  = './src/';
+doxygen.outdir  = './';
 
 doxygen.html.search = [doxygen.outdir 'html/search/'];
 doxygen.html.self   = [doxygen.outdir 'html/'];
