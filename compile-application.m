@@ -57,10 +57,8 @@ directories.src = '';
 
 
 % Files.
-files.mkapp = '';
-files.mkobj = '';
+files.mkapp = 'gcc-application.m';
 files.rmapp = '';
-files.rmobj = '';
 files.self  = 'compile-application.m';
 
 
@@ -90,9 +88,7 @@ disp ('Done.');
 
 % Process build instructions.
 system ([octave.self ' ' files.rmapp]);
-system ([octave.self ' ' files.mkobj]);
 system ([octave.self ' ' files.mkapp]);
-system ([octave.self ' ' files.rmobj]);
 
 
 
