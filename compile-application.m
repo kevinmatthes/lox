@@ -19,10 +19,10 @@
 %%%%
 %%
 %%  FILE
-%%      compile-library.m
+%%      compile-application.m
 %%
 %%  BRIEF
-%%      Create the main library of this repository.
+%%      Create the main application of this repository.
 %%
 %%  AUTHOR
 %%      Kevin Matthes
@@ -52,16 +52,16 @@ octave.self = 'octave';
 
 
 % Directories.
-directories.lib = '';
+directories.src = '';
 
 
 
 % Files.
-files.mklib = '';
+files.mkapp = '';
 files.mkobj = '';
-files.rmlib = '';
+files.rmapp = '';
 files.rmobj = '';
-files.self  = 'compile-library.m';
+files.self  = 'compile-application.m';
 
 
 
@@ -82,16 +82,16 @@ disp ([banner 'Begin build instruction.']);
 
 
 % Adjust working directory.
-fprintf ([banner 'Set working directory to ' directories.lib ' ... ']);
-cd (directories.lib);
+fprintf ([banner 'Set working directory to ' directories.src ' ... ']);
+cd (directories.src);
 disp ('Done.');
 
 
 
 % Process build instructions.
-system ([octave.self ' ' files.rmlib]);
+system ([octave.self ' ' files.rmapp]);
 system ([octave.self ' ' files.mkobj]);
-system ([octave.self ' ' files.mklib]);
+system ([octave.self ' ' files.mkapp]);
 system ([octave.self ' ' files.rmobj]);
 
 
