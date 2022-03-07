@@ -35,6 +35,7 @@
  * Includes.
  */
 
+#include <stdio.h>
 #include "common.h"
 
 
@@ -53,6 +54,8 @@
 int main (const int argc, const char ** args)
 {
     return 0x0;
+
+    printf ("%d %s\n", argc, args[0x0]);
 }
 
 /******************************************************************************/

@@ -40,6 +40,9 @@
 ##
 ################################################################################
 
+# Build artifacts.
+lox
+
 # Documentation artifacts.
 html/
 latex/
