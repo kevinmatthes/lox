@@ -47,7 +47,7 @@
 %%%%
 
 % Files.
-files.delete.file1  = '';
+files.delete.file1  = 'lox';
 % files.delete.file2  = '';
 % files.delete.file3  = '';
 % ...

@@ -52,13 +52,13 @@ octave.self = 'octave';
 
 
 % Directories.
-directories.src = '';
+directories.src = './src/';
 
 
 
 % Files.
 files.mkapp = 'gcc-application.m';
-files.rmapp = '';
+files.rmapp = 'clean-other.m';
 files.self  = 'compile-application.m';
 
 
