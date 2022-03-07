@@ -73,12 +73,15 @@ invoked by calling `repository-manual.m`.
 
 ## Software Requirements
 
-| Requirement       | Type          | Role                              |
-|:------------------|:-------------:|:----------------------------------|
-| `docs-snippets`   | repository    | documentation constants           |
-| GNU Octave        | application   | execution of the provided scripts |
-| Pandoc            | application   | compilation of repository manual  |
-| `texlive-full`    | package       | compilation of repository manual  |
+| Requirement       | Type          | Role                                  |
+|:------------------|:-------------:|:--------------------------------------|
+| `docs-snippets`   | repository    | documentation constants               |
+| Doxygen           | application   | creation of source code documentation |
+| `gcc`             | application   | C compiler                            |
+| GNU Octave        | application   | execution of the provided scripts     |
+| `make`            | application   | finalisation of Doxygen documentation |
+| Pandoc            | application   | compilation of repository manual      |
+| `texlive-full`    | package       | compilation of repository manual      |
 
 The compilation of such an **optional** repository manual can be invoked by just
 calling one of the following lines in a terminal.
