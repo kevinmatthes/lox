@@ -58,6 +58,20 @@
 
 
 
+/**
+ * \brief   The bytecode instructions.
+ *
+ * This enum encodes the different bytecode instructions.
+ */
+
+typedef enum
+{
+    OP_RETURN       /*!< Leave a function.                                    */
+}
+opcode_t;
+
+
+
 /*
  * Function declarations.
  */
