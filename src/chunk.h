@@ -67,7 +67,7 @@
 
 typedef enum
 {
-    OP_RETURN       /*!< Leave a function.                                    */
+    OP_RETURN               /*!< Leave a function.                            */
 }
 opcode_t;
 
