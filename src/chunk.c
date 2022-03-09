@@ -47,6 +47,8 @@
  *
  * Since the given chunk required the allocation of memory, this allocation
  * should be revoked appropriately as soon as the chunk is not required anymore.
+ *
+ * After the freeing is complete, the chunk will be reinitialised.
  */
 
 void chunk_free (chunk_t * chunk)
