@@ -61,7 +61,8 @@
 /**
  * \brief   The bytecode instructions.
  *
- * This enum encodes the different bytecode instructions.
+ * This enum encodes the different bytecode instructions to a small basic
+ * instruction set for the Lox compiler.
  */
 
 typedef enum
