@@ -50,10 +50,6 @@
 
 
 
-/*
- * Macros.
- */
-
 /**
  * \brief   An abbreviation to increase the capacity of a dynamic array.
  * \param   c   The old capacity to increase.
@@ -64,6 +60,7 @@
  *
  * Beginning with an initial size, each call will double the current capacity.
  */
+
 #define GROW_CAPACITY(c) ((c) < 0x8 ? 0x8 : (c) << 0x2)
 
 
@@ -90,6 +87,7 @@
 
 // Tidying up.
 #ifndef __LOX_INTERNAL__
+#undef  GROW_CAPACITY
 #endif  // ! __LOX_INTERNAL__
 
 // Leaving the header.
