@@ -94,7 +94,7 @@ chunk_t;
  * Function declarations.
  */
 
-// .
+extern  void    chunk_init  (chunk_t * chunk);
 
 
 
