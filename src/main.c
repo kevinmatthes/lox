@@ -48,7 +48,12 @@
  *
  * This is the main function of the Lox compiler.
  *
- * In case anything went as it should have had to, `0` will be returned.
+ * The return codes have the following meanings:
+ *
+ * | Code   | Meaning                                                   |
+ * |:------:|:----------------------------------------------------------|
+ * | 0      | Anything alright, no problem occured.                     |
+ * | 1      | The memory did not suffice for the required allocations.  |
  */
 
 int main (const int argc, const char ** args)
