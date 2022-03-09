@@ -57,4 +57,34 @@ void chunk_init (chunk_t * chunk)
     return;
 }
 
+
+
+/**
+ * \brief   Append an instruction to a certain chunk of bytecode.
+ * \param   chunk   The chunk to append a byte to.
+ * \param   byte    The byte to append to the chunk.
+ *
+ * This function will add a given instruction to a certain chunk of bytecode.
+ */
+
+void chunk_write (chunk_t * chunk, const uint8_t byte)
+{
+    if (chunk -> capacity < chunk -> count + 0x1)
+    {
+        const int   old_capacity    = chunk -> capacity;
+
+        chunk -> capacity   = GROW_CAPACITY (old_capacity);
+        chunk -> count      = GROW_ARRAY ( uint8_t
+                                         , chunk -> code
+                                         , old_capacity
+                                         , chunk -> capacity
+                                         );
+    };
+
+    chunk -> code[chunk -> count] = byte;
+    chunk -> count++;
+
+    return;
+}
+
 /******************************************************************************/
