@@ -51,6 +51,25 @@
 
 
 /**
+ * \brief   Increase the capacity of the given dynamic array.
+ * \param   t   The type of the array to increase the capacity of.
+ * \param   p   The pointer to the array to increase the capacity of.
+ * \param   o   The old capacity.
+ * \param   n   The new capacity.
+ * \return  The pointer to the memory region with the requested higher capacity.
+ *
+ * This macro abbreviates the process of memory reallocation in order to enlarge
+ * the provided storage for elements of the given type.
+ *
+ * This macro will be tidied up at the end of the header.
+ */
+
+#define GROW_ARRAY(t, p, o, n) \
+    (t *) reallocate (p, sizeof (t) * o, sizeof (t) * n)
+
+
+
+/**
  * \brief   An abbreviation to increase the capacity of a dynamic array.
  * \param   c   The old capacity to increase.
  * \return  The new higher capacity.
@@ -59,9 +78,12 @@
  * array.
  *
  * Beginning with an initial size, each call will double the current capacity.
+ *
+ * This macro will be tidied up at the end of the header.
  */
 
-#define GROW_CAPACITY(c) ((c) < 0x8 ? 0x8 : (c) << 0x2)
+#define GROW_CAPACITY(c) \
+    ((c) < 0x8 ? 0x8 : (c) << 0x2)
 
 
 
@@ -69,7 +91,10 @@
  * Function declarations.
  */
 
-// .
+extern  void *  reallocate  ( void * pointer
+                            , const size_t old_size
+                            , const size_t new_size
+                            );
 
 
 
