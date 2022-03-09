@@ -42,6 +42,24 @@
 
 
 /**
+ * \brief   Free a chunk of bytecode.
+ * \param   chunk   The chunk to free.
+ *
+ * Since the given chunk required the allocation of memory, this allocation
+ * should be revoked appropriately as soon as the chunk is not required anymore.
+ */
+
+void chunk_free (chunk_t * chunk)
+{
+    FREE_ARRAY (uint8_t, chunk -> code, chunk -> capacity);
+    chunk_init (chunk);
+
+    return;
+}
+
+
+
+/**
  * \brief   Construct a new chunk of bytecode.
  * \param   chunk   The chunk to initialise.
  *
