@@ -45,7 +45,8 @@
  * Includes.
  */
 
-// .
+// This project.
+#include "common.h"
 
 
 
@@ -53,7 +54,17 @@
  * Macros.
  */
 
-// .
+/**
+ * \brief   An abbreviation to increase the capacity of a dynamic array.
+ * \param   c   The old capacity to increase.
+ * \return  The new higher capacity.
+ *
+ * This macro abbreviates the determination of the new capacity for a dynamic
+ * array.
+ *
+ * Beginning with an initial size, each call will double the current capacity.
+ */
+#define GROW_CAPACITY(c) ((c) < 0x8 ? 0x8 : (c) << 0x2)
 
 
 
