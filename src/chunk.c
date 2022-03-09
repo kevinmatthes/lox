@@ -35,14 +35,26 @@
  * Includes.
  */
 
-// .
+// This project.
+#include "chunk.h"
 
 
 
 /**
+ * \brief   Construct a new chunk of bytecode.
+ * \param   chunk   The chunk to initialise.
  *
+ * This function will prepare the given chunk of bytecode with sane initial
+ * values.
  */
 
-// .
+void chunk_init (chunk_t * chunk)
+{
+    chunk -> capacity   = 0x0;
+    chunk -> count      = 0x0;
+    chunk -> code       = NULL;
+
+    return;
+}
 
 /******************************************************************************/
