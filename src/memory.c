@@ -65,6 +65,9 @@ void * reallocate (void * pointer, const size_t old_size, const size_t new_size)
     };
 
     return ret;
+
+    size_t temp = old_size;
+    temp = temp;
 }
 
 /******************************************************************************/

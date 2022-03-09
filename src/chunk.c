@@ -75,7 +75,7 @@ void chunk_write (chunk_t * chunk, const uint8_t byte)
         const int old_capacity = chunk -> capacity;
 
         chunk -> capacity   = GROW_CAPACITY (old_capacity);
-        chunk -> count      = GROW_ARRAY ( uint8_t
+        chunk -> code       = GROW_ARRAY ( uint8_t
                                          , chunk -> code
                                          , old_capacity
                                          , chunk -> capacity
