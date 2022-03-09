@@ -82,7 +82,7 @@ opcode_t;
 
 typedef struct
 {
-    uint8_t *   code;
+    uint8_t *   code;       /*!< The bytecode sequence to process.            */
 }
 chunk_t;
 
