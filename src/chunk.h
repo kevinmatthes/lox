@@ -82,6 +82,8 @@ opcode_t;
 
 typedef struct
 {
+    int         capacity;   /*!< The maximal count of instructions to hold.   */
+    int         count;      /*!< The amount of held instructions.             */
     uint8_t *   code;       /*!< The bytecode sequence to process.            */
 }
 chunk_t;
