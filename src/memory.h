@@ -112,6 +112,7 @@ extern  void *  reallocate  ( void * pointer
 
 // Tidying up.
 #ifndef __LOX_INTERNAL__
+#undef  GROW_ARRAY
 #undef  GROW_CAPACITY
 #endif  // ! __LOX_INTERNAL__
 
