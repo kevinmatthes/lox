@@ -54,6 +54,24 @@
 
 
 /**
+ * \brief   Free the allocated memory of the given dynamic array.
+ * \param   t   The type of the array to free.
+ * \param   p   The pointer to the memory region to free.
+ * \param   o   The old capacity.
+ * \return  `NULL`
+ *
+ * This macro abbreviates the process of freeing the memory of the given dynamic
+ * array.
+ *
+ * This macro will be tidied up at the end of the header.
+ */
+
+#define FREE_ARRAY(t, p, o) \
+    reallocate ((p), sizeof (t) * (o), 0x0)
+
+
+
+/**
  * \brief   Increase the capacity of the given dynamic array.
  * \param   t   The type of the array to increase the capacity of.
  * \param   p   The pointer to the array to increase the capacity of.
@@ -115,6 +133,7 @@ extern  void *  reallocate  ( void * pointer
 
 // Tidying up.
 #ifndef __LOX_INTERNAL__
+#undef  FREE_ARRAY
 #undef  GROW_ARRAY
 #undef  GROW_CAPACITY
 #endif  // ! __LOX_INTERNAL__
