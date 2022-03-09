@@ -68,7 +68,7 @@
  */
 
 #define GROW_ARRAY(t, p, o, n) \
-    (t *) reallocate (p, sizeof (t) * (o), sizeof (t) * (n))
+    (t *) reallocate ((p), sizeof (t) * (o), sizeof (t) * (n))
 
 
 
