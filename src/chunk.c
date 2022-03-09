@@ -71,7 +71,7 @@ void chunk_write (chunk_t * chunk, const uint8_t byte)
 {
     if (chunk -> capacity < chunk -> count + 0x1)
     {
-        const int   old_capacity    = chunk -> capacity;
+        const int old_capacity = chunk -> capacity;
 
         chunk -> capacity   = GROW_CAPACITY (old_capacity);
         chunk -> count      = GROW_ARRAY ( uint8_t
