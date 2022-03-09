@@ -35,14 +35,35 @@
  * Includes.
  */
 
-// .
+// This project.
+#include "memory.h"
 
 
 
 /**
+ * \brief   Adjust the memory allocation of the given dynamic array.
+ * \param   pointer     The pointer to the allocated region.
+ * \param   old_size    The current size of the given memory region.
+ * \param   new_size    The intended new size of the given memory region.
+ * \return  The pointer to the new memory region.
  *
+ * This function manages all memory demands of the contained data structures.
  */
 
-// .
+void * reallocate (void * pointer, const size_t old_size, const size_t new_size)
+{
+    void * ret = NULL;
+
+    if (! new_size)
+    {
+        free (pointer);
+    }
+    else
+    {
+        ret = realloc (pointer, new_size);
+    };
+
+    return ret;
+}
 
 /******************************************************************************/
