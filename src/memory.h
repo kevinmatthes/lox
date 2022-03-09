@@ -62,7 +62,7 @@
  * \return  The pointer to the memory region with the requested higher capacity.
  *
  * This macro abbreviates the process of memory reallocation in order to enlarge
- * the provided storage for elements of the given type.
+ * the provided storage capacity for elements of the given type.
  *
  * This macro will be tidied up at the end of the header.
  */
