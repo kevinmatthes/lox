@@ -73,6 +73,21 @@ opcode_t;
 
 
 
+/**
+ * \brief   The data structure for the bytecode sequences.
+ *
+ * This data structure organises the sequences of bytecode which form the
+ * compilation of the input Lox scripts.
+ */
+
+typedef struct
+{
+    uint8_t *   code;
+}
+chunk_t;
+
+
+
 /*
  * Function declarations.
  */
