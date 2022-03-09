@@ -55,12 +55,13 @@ void * reallocate (void * pointer, const size_t old_size, const size_t new_size)
     void * ret = NULL;
 
     if (! new_size)
-    {
         free (pointer);
-    }
     else
     {
         ret = realloc (pointer, new_size);
+
+        if (ret == NULL)
+            exit (0x1);
     };
 
     return ret;
