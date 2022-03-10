@@ -80,11 +80,11 @@ END_TEST
 Suite * chunks (void)
 {
     Suite * suite       = suite_create ("Chunks of Bytecode");
-    TCase * opreturn    = tcase_create ("Life Cycle");
+    TCase * life_cycle  = tcase_create ("Life Cycle");
 
-    tcase_add_test (opreturn, chunk_lifecycle_0x1);
+    tcase_add_test (life_cycle, chunk_lifecycle_0x1);
 
-    suite_add_tcase (suite, opreturn);
+    suite_add_tcase (suite, life_cycle);
 
     return suite;
 }
