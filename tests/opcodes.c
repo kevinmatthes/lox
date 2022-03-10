@@ -49,6 +49,27 @@
 
 
 /**
+ * \brief   A simple test for `OP_RETURN`.
+ *
+ * This test will check the operation code `OP_RETURN`.
+ */
+
+START_TEST (opreturn_basic)
+{
+    chunk_t chunk;
+
+    chunk_init (& chunk);
+    chunk_write (& chunk, OP_RETURN);
+    chunk_disassemble (& chunk, "Test OP_RETURN");
+    chunk_free (& chunk);
+
+    return;
+}
+END_TEST
+
+
+
+/**
  * \brief   The main function of the application.
  * \param   argc    The count of command line arguments.
  * \param   args    The command line arguments.
