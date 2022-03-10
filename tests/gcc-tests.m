@@ -60,8 +60,8 @@ compiler.call   = [compiler.self compiler.flags];
 
 
 % Files.
-files.opcodes.out  = './opcodes';
-files.opcodes.self = 'opcodes.c';
+files.main.out  = './lox-tests';
+files.main.self = 'main.c';
 
 files.self  = 'gcc-tests.m';
 
@@ -74,10 +74,10 @@ failures    = 0;
 
 
 % Call adjustment.
-compiler.opcodes   = [compiler.call files.opcodes.self];
-compiler.opcodes   = [compiler.opcodes compiler.link];
-compiler.opcodes   = [compiler.opcodes ' -o '];
-compiler.opcodes   = [compiler.opcodes files.opcodes.out];
+compiler.main   = [compiler.call files.main.self];
+compiler.main   = [compiler.main compiler.link];
+compiler.main   = [compiler.main ' -o '];
+compiler.main   = [compiler.main files.main.out];
 
 
 
@@ -95,8 +95,8 @@ disp ([banner 'Begin build instruction.']);
 % Call Fortran compiler.
 disp ([banner 'Compile test suites ...']);
 
-disp (compiler.opcodes);
-system (compiler.opcodes);
+disp (compiler.main);
+system (compiler.main);
 
 disp ([banner 'Done.']);
 
@@ -105,7 +105,7 @@ disp ([banner 'Done.']);
 % Run tests.
 disp ([banner 'Run tests ...']);
 
-failures += system (files.opcodes.out);
+failures += system (files.main.out);
 
 if ~ failures;
     disp ([banner 'No failures found.']);
@@ -118,8 +118,8 @@ end;
 % Remove test applications.
 fprintf ([banner 'Remove test suites ... ']);
 
-if length (glob (files.opcodes.out));
-    delete (files.opcodes.out);
+if length (glob (files.main.out));
+    delete (files.main.out);
 end;
 
 disp ('Done.');
