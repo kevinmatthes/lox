@@ -39,9 +39,9 @@
 #include <stdio.h>
 
 // This project.
-#include "chunk.h"
-#include "common.h"
-#include "debug.h"
+#include "../lib/chunk.h"
+#include "../lib/common.h"
+#include "../lib/debug.h"
 
 
 
