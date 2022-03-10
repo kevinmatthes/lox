@@ -52,16 +52,16 @@ software.octave = 'octave';
 
 
 % Directories.
-directories.lib     = '';
-directories.test    = '';
+directories.lib     = './lib/';
+directories.test    = './tests/';
 
 
 
 % Files.
-files.librunner     = '';
-files.rmlib         = '';
+files.librunner     = 'compile-library.m';
+files.rmlib         = 'clean-libraries.m';
 files.self          = 'test-library.m';
-files.testrunner    = '';
+files.testrunner    = 'gcc-tests.m';
 
 
 
