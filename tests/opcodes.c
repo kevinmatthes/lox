@@ -42,9 +42,9 @@
 #include <check.h>
 
 // This project.
-#include "../src/chunk.h"
-#include "../src/common.h"
-#include "../src/debug.h"
+#include "../lib/chunk.h"
+#include "../lib/common.h"
+#include "../lib/debug.h"
 
 
 
@@ -85,7 +85,7 @@ Suite * opcodes (void)
     tcase_add_test (opreturn, opreturn_basic);
 
     suite_add_tcase (suite, opreturn);
-    
+
     return suite;
 }
 
