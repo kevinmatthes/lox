@@ -52,7 +52,7 @@ compiler.self   = ' gcc ';
 compiler.flags  = ' -Wall -Werror -Wextra -Wpedantic ';
 compiler.flags  = [compiler.flags ' -std=c99 '];
 
-compiler.link   = ' -L../lib/ -llox ';
+compiler.link   = ' -L../lib/ -lcheck -llox -lm -lpthread -lrt -lsubunit ';
 compiler.call   = [compiler.self compiler.flags];
 
 
