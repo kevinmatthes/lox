@@ -45,7 +45,11 @@
  * Includes.
  */
 
-// .
+// The C standard library.
+#include <stdio.h>
+
+// This project.
+#include "chunk.h"
 
 
 
@@ -61,7 +65,12 @@
  * Function declarations.
  */
 
-// .
+extern  void    chunk_disassemble       ( const chunk_t * const chunk
+                                        , const char * const    name
+                                        );
+extern  int     disassemble_instruction ( const chunk_t * const chunk
+                                        , const int             offset
+                                        );
 
 
 
