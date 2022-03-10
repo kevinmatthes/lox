@@ -58,6 +58,7 @@ directories.src = './src/';
 
 % Files.
 files.mkapp = 'gcc-application.m';
+files.mklib = 'compile-library.m';
 files.rmapp = 'clean-other.m';
 files.self  = 'compile-application.m';
 
@@ -76,6 +77,11 @@ banner  = ['[ ' files.self ' ] '];
 
 % Begin build instruction.
 disp ([banner 'Begin build instruction.']);
+
+
+
+% Preparations.
+system ([octave.self ' ' files.mklib]);
 
 
 
