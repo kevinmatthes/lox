@@ -60,7 +60,7 @@ START_TEST (opreturn_basic)
 
     chunk_init (& chunk);
     chunk_write (& chunk, OP_RETURN);
-    chunk_disassemble (& chunk, "Test OP_RETURN");
+    chunk_disassemble (& chunk, "Test OP_RETURN 0x1");
     chunk_free (& chunk);
 
     return;
@@ -70,33 +70,23 @@ END_TEST
 
 
 /**
- * \brief   The main function of the application.
- * \param   argc    The count of command line arguments.
- * \param   args    The command line arguments.
- * \return  The application status.
+ * \brief   The main function of this test suite.
+ * \return  The number of errors occured.
  *
- * This is the main function of the Lox compiler.
- *
- * The return codes have the following meanings:
- *
- * | Code   | Meaning                                                   |
- * |:------:|:----------------------------------------------------------|
- * | 0      | Anything alright, no problem occured.                     |
- * | 1      | The memory did not suffice for the required allocations.  |
+ * This is the main function of the suite for the opcodes.
  */
 
-int main (const int argc, const char ** args)
+int main (void)
 {
-    chunk_t chunk;
+    int         ret     = 0x0;
+    Suite *     suite   = opcodes ();
+    SRunner *   runner  = srunner_create (suite);
 
-    chunk_init (& chunk);
-    chunk_write (& chunk, OP_RETURN);
-    chunk_disassemble (& chunk, "Test 0x1");
-    chunk_free (& chunk);
+    srunner_run_all (runner, CK_NORMAL);
+    ret += srunner_ntests_failed (runner);
+    srunner_free (runner);
 
-    return 0x0;
-
-    fprintf (stderr, "%d %s\n", argc, args[0x0]);
+    return ret;
 }
 
 /******************************************************************************/
