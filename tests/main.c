@@ -49,18 +49,18 @@
 
 
 /**
- * \brief   A simple test for `OP_RETURN`.
+ * \brief   A simple test for the chunk life cycle.
  *
- * This test will check the operation code `OP_RETURN`.
+ * This test will check the simple chunk life cycle.
  */
 
-START_TEST (opreturn_basic)
+START_TEST (chunk_lifecycle_0x1)
 {
     chunk_t chunk;
 
     chunk_init (& chunk);
     chunk_write (& chunk, OP_RETURN);
-    chunk_disassemble (& chunk, "Test OP_RETURN 0x1");
+    chunk_disassemble (& chunk, "Test 0x1");
     chunk_free (& chunk);
 
     return;
@@ -70,19 +70,19 @@ END_TEST
 
 
 /**
- * \brief   The test suite for opcodes.
+ * \brief   The test suite for chunks.
  * \return  The configurated test suite.
  *
  * This function will construct a new test suite in order to run all tests
- * concerning the opcodes.
+ * concerning chunks of bytecode.
  */
 
-Suite * opcodes (void)
+Suite * chunks (void)
 {
-    Suite * suite       = suite_create ("Opcodes");
-    TCase * opreturn    = tcase_create ("OP_RETURN");
+    Suite * suite       = suite_create ("Chunks of Bytecode");
+    TCase * opreturn    = tcase_create ("Life Cycle");
 
-    tcase_add_test (opreturn, opreturn_basic);
+    tcase_add_test (opreturn, chunk_lifecycle_0x1);
 
     suite_add_tcase (suite, opreturn);
 
@@ -103,7 +103,7 @@ SRunner * sr_main (void)
 {
     SRunner * runner = srunner_create (NULL);
 
-    srunner_add_suite (runner, opcodes ());
+    srunner_add_suite (runner, chunks ());
 
     return runner;
 }
