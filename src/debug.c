@@ -77,7 +77,7 @@ int disassemble_instruction (const chunk_t * const chunk, const int offset)
     const uint8_t   instruction = chunk -> code[offset];
     int             ret         = 0x0;
 
-    fprintf ("%04x ", offset);
+    fprintf (stderr, "%04x ", offset);
 
     switch (instruction)
     {
