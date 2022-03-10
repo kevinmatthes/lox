@@ -58,6 +58,12 @@
 
 int main (const int argc, const char ** args)
 {
+    chunk_t chunk;
+
+    chunk_init (& chunk);
+    chunk_write (& chunk, OP_RETURN);
+    chunk_free (& chunk);
+
     return 0x0;
 
     printf ("%d %s\n", argc, args[0x0]);
