@@ -85,9 +85,36 @@ opcode_t;
 
 typedef struct
 {
-    int         capacity;   /*!< The maximal count of instructions to hold.   */
-    int         count;      /*!< The amount of held instructions.             */
-    uint8_t *   code;       /*!< The bytecode sequence to process.            */
+    /**
+     * \brief   The maximum count of holdable instructions.
+     *
+     * This field represents the count of instructions which are at most
+     * storable by this dynamic array.
+     */
+
+    int         capacity;
+
+
+
+    /**
+     * \brief   The count of currently held instructions.
+     *
+     * This field represents the count instructions acutually held by this
+     * dynamic array.
+     */
+
+    int         count;
+
+
+
+    /**
+     * \brief   The bytecode sequence to process.
+     *
+     * This pointer points to the sequence of bytecode which shall be processed
+     * by the interpreter.
+     */
+
+    uint8_t *   code;
 }
 chunk_t;
 
