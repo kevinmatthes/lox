@@ -48,17 +48,18 @@
 
 % Software.
 compiler.self   = ' gcc ';
+
 compiler.flags  = ' -Wall -Werror -Wextra -Wpedantic ';
-compiler.flags  = [compiler.flags ' -std=f95 '];
-compiler.flags  = [compiler.flags ' -fall-intrinsics '];
-compiler.link   = '';
+compiler.flags  = [compiler.flags ' -std=c99 '];
+
+compiler.link   = ' -L../lib/ -llox ';
 compiler.call   = [compiler.self compiler.flags];
 
 
 
 % Files.
-files.app1.out  = '';
-files.app1.self = '';
+files.opcodes.out  = './opcodes';
+files.opcodes.self = 'opcodes.c';
 
 files.self  = 'gcc-tests.m';
 
@@ -71,10 +72,10 @@ failures    = 0;
 
 
 % Call adjustment.
-compiler.app1   = [compiler.call files.app1.self];
-compiler.app1   = [compiler.app1 compiler.link];
-compiler.app1   = [compiler.app1 ' -o '];
-compiler.app1   = [compiler.app1 files.app1.out];
+compiler.opcodes   = [compiler.call files.opcodes.self];
+compiler.opcodes   = [compiler.opcodes compiler.link];
+compiler.opcodes   = [compiler.opcodes ' -o '];
+compiler.opcodes   = [compiler.opcodes files.opcodes.out];
 
 
 
@@ -92,8 +93,8 @@ disp ([banner 'Begin build instruction.']);
 % Call Fortran compiler.
 disp ([banner 'Compile test suites ...']);
 
-disp (compiler.app1);
-system (compiler.app1);
+disp (compiler.opcodes);
+system (compiler.opcodes);
 
 disp ([banner 'Done.']);
 
@@ -102,7 +103,7 @@ disp ([banner 'Done.']);
 % Run tests.
 disp ([banner 'Run tests ...']);
 
-failures += system (files.app1.out);
+failures += system (files.opcodes.out);
 
 if ~ failures;
     disp ([banner 'No failures found.']);
@@ -115,8 +116,8 @@ end;
 % Remove test applications.
 fprintf ([banner 'Remove test suites ... ']);
 
-if length (glob (files.app1.out));
-    delete (files.app1.out);
+if length (glob (files.opcodes.out));
+    delete (files.opcodes.out);
 end;
 
 disp ('Done.');
