@@ -35,14 +35,29 @@
  * Includes.
  */
 
-// .
+// This project.
+#include "debug.h"
 
 
 
 /**
+ * \brief   Show the function of a given piece of bytecode.
+ * \param   chunk   The sequence of bytecode to analyse.
+ * \param   name    The bytecode chunk's identifier and / or purpose.
  *
+ * This function will prompt the content of a bytecode sequence to the user.
  */
 
-// .
+void chunk_disassemble (const chunk_t * const chunk, const char * const name)
+{
+    fprintf (stderr, "== %s ==\n", name);
+
+    for ( int i = 0x0
+        ; i < chunk -> count
+        ; i = disassemble_instruction (chunk, i)
+        );
+
+    return;
+}
 
 /******************************************************************************/
