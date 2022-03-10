@@ -39,8 +39,8 @@
 --
 ------------------------------------------------------------------------------->
 
-# `./src/`
+# `./tests/`
 
-This is the main source code directory of the repository.
+This directory contains the tests for the project.
 
 <!----------------------------------------------------------------------------->
