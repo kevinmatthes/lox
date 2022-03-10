@@ -19,10 +19,10 @@
 %%%%
 %%
 %%  FILE
-%%      gfortran-95-tests.m
+%%      gcc-tests.m
 %%
 %%  BRIEF
-%%      Test the provided Fortran source code using `gfortran`.
+%%      Test the provided Fortran source code using `gcc`.
 %%
 %%  AUTHOR
 %%      Kevin Matthes
@@ -47,7 +47,7 @@
 %%%%
 
 % Software.
-compiler.self   = ' gfortran ';
+compiler.self   = ' gcc ';
 compiler.flags  = ' -Wall -Werror -Wextra -Wpedantic ';
 compiler.flags  = [compiler.flags ' -std=f95 '];
 compiler.flags  = [compiler.flags ' -fall-intrinsics '];
@@ -60,7 +60,7 @@ compiler.call   = [compiler.self compiler.flags];
 files.app1.out  = '';
 files.app1.self = '';
 
-files.self  = 'gfortran-95-tests.m';
+files.self  = 'gcc-tests.m';
 
 
 
