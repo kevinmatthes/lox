@@ -18,7 +18,7 @@
 
 /**
  * \author      Kevin Matthes
- * \brief       The main file in order to invoke all test cases.
+ * \brief       The main file in order to invoke all tests.
  * \copyright   (C) 2022 Kevin Matthes.
  *              This file is licensed GPL 2 as of June 1991.
  * \date        2022
@@ -26,7 +26,7 @@
  * \note        See `LICENSE' for full license.
  *              See `README.md' for project details.
  *
- * This file will invoke all prepared test cases.
+ * This file will invoke all prepared tests.
  */
 
 /******************************************************************************/
@@ -70,7 +70,7 @@ END_TEST
 
 
 /**
- * \brief   The test suite for the opcodes.
+ * \brief   The test suite for opcodes.
  * \return  The configurated test suite.
  *
  * This function will construct a new test suite in order to run all tests
@@ -92,17 +92,35 @@ Suite * opcodes (void)
 
 
 /**
- * \brief   The main function of this test suite.
+ * \brief   The main test runner.
+ * \return  The test runner.
+ *
+ * This function constructs the main test runner which will invoke all test
+ * suites.
+ */
+
+SRunner * sr_main (void)
+{
+    SRunner * runner = srunner_create (NULL);
+
+    srunner_add_suite (runner, opcodes ());
+
+    return runner;
+}
+
+
+
+/**
+ * \brief   The main function.
  * \return  The number of errors occured.
  *
- * This is the main function of the suite for the opcodes.
+ * This function will invoke and run all tests.
  */
 
 int main (void)
 {
     int         ret     = 0x0;
-    Suite *     suite   = opcodes ();
-    SRunner *   runner  = srunner_create (suite);
+    SRunner *   runner  = sr_main ();
 
     srunner_run_all (runner, CK_NORMAL);
     ret += srunner_ntests_failed (runner);
