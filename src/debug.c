@@ -60,4 +60,36 @@ void chunk_disassemble (const chunk_t * const chunk, const char * const name)
     return;
 }
 
+
+
+/**
+ * \brief   Explain the purpose of a certain instruction.
+ * \param   chunk   The chunk to analyse the instructions of.
+ * \param   offset  The index of the intruction to examine.
+ * \return  The index of the next instruction.
+ *
+ * This function will prompt the purpose of the instructions a certain sequence
+ * of bytecode contains to the user.
+ */
+
+int disassemble_instruction (const chunk_t * const chunk, const int offset)
+{
+    const uint8_t   instruction = chunk -> code[offset];
+    int             ret         = 0x0;
+
+    switch (instruction)
+    {
+        default:
+            fprintf (stderr, "Unknown opcode %d.\n", instruction);
+            ret = 0x1;
+            break;
+
+        case OP_RETURN:
+            ret = simple_instruction ("OP_RETURN", offset);
+            break;
+    };
+
+    return ret;
+}
+
 /******************************************************************************/
