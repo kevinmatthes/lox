@@ -108,7 +108,7 @@ int disassemble_instruction (const chunk_t * const chunk, const int offset)
 
 inline int simple_instruction (const char * const name, const int offset)
 {
-    fprintf (stderr, "%s", name);
+    fprintf (stderr, "%s\n", name);
     return offset + 0x1;
 }
 
