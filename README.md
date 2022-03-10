@@ -75,6 +75,7 @@ invoked by calling `repository-manual.m`.
 
 | Requirement       | Type          | Role                                  |
 |:------------------|:-------------:|:--------------------------------------|
+| Check             | library       | C unit tests                          |
 | `docs-snippets`   | repository    | documentation constants               |
 | Doxygen           | application   | creation of source code documentation |
 | `gcc`             | application   | C compiler                            |

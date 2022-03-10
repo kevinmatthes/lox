@@ -38,10 +38,13 @@
 // The C standard library.
 #include <stdio.h>
 
+// Third party libraries.
+#include <check.h>
+
 // This project.
-#include "chunk.h"
-#include "common.h"
-#include "debug.h"
+#include "../src/chunk.h"
+#include "../src/common.h"
+#include "../src/debug.h"
 
 
 
