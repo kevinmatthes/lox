@@ -39,8 +39,12 @@
 --
 ------------------------------------------------------------------------------->
 
-# `./src/`
+# `./lib/`
 
-This is the main source code directory of the repository.
+This directory contains the kernel of the Lox coding language.
+
+In order to simplify future modularisation as well as unit testing, the whole
+internal source code of this Lox implementation was outsourced to this
+directory.
 
 <!----------------------------------------------------------------------------->
