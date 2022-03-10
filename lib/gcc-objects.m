@@ -48,7 +48,10 @@
 
 % Software.
 software.compiler.self  = ' gcc ';
+
 software.compiler.flags = ' -Wall -Werror -Wextra -Wpedantic -std=c99 -c ';
+software.compiler.flags = [software.compiler.flags ' -D__LOX_INTERNAL__ '];
+
 software.compiler.call  = [software.compiler.self software.compiler.flags];
 
 
