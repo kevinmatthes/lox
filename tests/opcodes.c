@@ -70,6 +70,28 @@ END_TEST
 
 
 /**
+ * \brief   The test suite for the opcodes.
+ * \return  The configurated test suite.
+ *
+ * This function will construct a new test suite in order to run all tests
+ * concerning the opcodes.
+ */
+
+Suite * opcodes (void)
+{
+    Suite * suite       = suite_create ("Opcodes");
+    TCase * opreturn    = tcase_create ("OP_RETURN");
+
+    tcase_add_test (opreturn, opreturn_basic);
+
+    suite_add_tcase (suite, opreturn);
+    
+    return suite;
+}
+
+
+
+/**
  * \brief   The main function of this test suite.
  * \return  The number of errors occured.
  *
