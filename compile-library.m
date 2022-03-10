@@ -52,15 +52,15 @@ octave.self = 'octave';
 
 
 % Directories.
-directories.lib = '';
+directories.lib = './lib/';
 
 
 
 % Files.
-files.mklib = '';
-files.mkobj = '';
-files.rmlib = '';
-files.rmobj = '';
+files.mklib = 'ar-create.m';
+files.mkobj = 'gcc-objects.m';
+files.rmlib = 'clean-libraries.m';
+files.rmobj = 'clean-objects.m';
 files.self  = 'compile-library.m';
 
 
