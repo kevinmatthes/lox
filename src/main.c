@@ -35,7 +35,11 @@
  * Includes.
  */
 
+// The C standard library.
 #include <stdio.h>
+
+// This project.
+#include "chunk.h"
 #include "common.h"
 
 
