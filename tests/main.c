@@ -114,7 +114,7 @@ SRunner * sr_main (void)
  * \brief   The main function.
  * \return  The number of errors occured.
  *
- * This function will invoke and run all tests.
+ * This function will run all tests.
  */
 
 int main (void)
