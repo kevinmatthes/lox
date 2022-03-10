@@ -67,7 +67,7 @@ int main (const int argc, const char ** args)
 
     chunk_init (& chunk);
     chunk_write (& chunk, OP_RETURN);
-    chunk_disassamble (& chunk, "Test 0x1");
+    chunk_disassemble (& chunk, "Test 0x1");
     chunk_free (& chunk);
 
     return 0x0;

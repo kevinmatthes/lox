@@ -69,7 +69,7 @@ void chunk_free (chunk_t * chunk)
  * values.
  */
 
-void chunk_init (chunk_t * chunk)
+void chunk_init (chunk_t * const chunk)
 {
     chunk -> capacity   = 0x0;
     chunk -> count      = 0x0;
@@ -88,7 +88,7 @@ void chunk_init (chunk_t * chunk)
  * This function will add a given instruction to a certain chunk of bytecode.
  */
 
-void chunk_write (chunk_t * chunk, const uint8_t byte)
+void chunk_write (chunk_t * const chunk, const uint8_t byte)
 {
     if (chunk -> capacity < chunk -> count + 0x1)
     {

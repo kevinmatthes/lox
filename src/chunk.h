@@ -98,8 +98,8 @@ chunk_t;
  */
 
 extern  void    chunk_free  (chunk_t * chunk);
-extern  void    chunk_init  (chunk_t * chunk);
-extern  void    chunk_write (chunk_t * chunk, const uint8_t byte);
+extern  void    chunk_init  (chunk_t * const chunk);
+extern  void    chunk_write (chunk_t * const chunk, const uint8_t byte);
 
 
 
