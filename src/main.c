@@ -18,15 +18,15 @@
 
 /**
  * \author      Kevin Matthes
- * \brief       Tests for the different opcodes.
+ * \brief       The main source file.
  * \copyright   (C) 2022 Kevin Matthes.
  *              This file is licensed GPL 2 as of June 1991.
  * \date        2022
- * \file        opcodes.c
+ * \file        main.c
  * \note        See `LICENSE' for full license.
  *              See `README.md' for project details.
  *
- * These tests will check the different opcodes.
+ * This function introduces the `main` function of the Lox compiler.
  */
 
 /******************************************************************************/
