@@ -104,7 +104,7 @@
  */
 
 #define GROW_CAPACITY(c) \
-    ((c) < 0x8 ? 0x8 : (c) << 0x2)
+    ((c) < 0x8 ? 0x8 : (c) << 0x1)
 
 
 
