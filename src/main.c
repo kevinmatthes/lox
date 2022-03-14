@@ -26,7 +26,7 @@
  * \note        See `LICENSE' for full license.
  *              See `README.md' for project details.
  *
- * This function introduces the `main` function of the Lox compiler.
+ * This source file introduces the `main` function of the Lox compiler.
  */
 
 /******************************************************************************/
