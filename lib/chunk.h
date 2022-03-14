@@ -100,7 +100,7 @@ typedef struct
     /**
      * \brief   The count of currently held instructions.
      *
-     * This field represents the count instructions acutually held by this
+     * This field represents the count instructions actually held by this
      * dynamic array.  It is the count of occupied memory slots from those which
      * are allocated.
      */
