@@ -18,15 +18,16 @@
 
 /**
  * \author      Kevin Matthes
- * \brief       The main file in order to invoke all tests.
+ * \brief       The runners in order to invoke tests.
  * \copyright   (C) 2022 Kevin Matthes.
  *              This file is licensed GPL 2 as of June 1991.
  * \date        2022
- * \file        main.c
+ * \file        runners.c
  * \note        See `LICENSE' for full license.
  *              See `README.md' for project details.
  *
- * This file will invoke all prepared tests.
+ * This file defines the test suite runners in order to execute the configurated
+ * tests.
  */
 
 /******************************************************************************/
@@ -37,65 +38,6 @@
 
 // This project.
 #include "lox-tests.h"
-
-
-
-/**
- * \brief   A simple test for the chunk life cycle.
- *
- * This test will check the simple chunk life cycle.
- */
-
-START_TEST (chunk_lifecycle_0x1)
-{
-    chunk_t chunk;
-
-    chunk_init (& chunk);
-    chunk_write (& chunk, OP_RETURN);
-    chunk_disassemble (& chunk, "Test 0x1");
-    chunk_free (& chunk);
-
-    return;
-}
-END_TEST
-
-
-
-/**
- * \brief   The test case for chunk life cycles.
- * \return  The configurated test case.
- *
- * This function will construct a new test case in order to run all tests
- * concerning the life cycle of chunks of bytecode.
- */
-
-TCase * chunk_lifecycle (void)
-{
-    TCase * tcase = tcase_create ("Life Cycle");
-
-    tcase_add_test (tcase, chunk_lifecycle_0x1);
-
-    return tcase;
-}
-
-
-
-/**
- * \brief   The test suite for chunks.
- * \return  The configurated test suite.
- *
- * This function will construct a new test suite in order to run all tests
- * concerning chunks of bytecode.
- */
-
-Suite * chunks (void)
-{
-    Suite * suite = suite_create ("Chunks of Bytecode");
-
-    suite_add_tcase (suite, chunk_lifecycle ());
-
-    return suite;
-}
 
 
 
@@ -114,27 +56,6 @@ SRunner * sr_main (void)
     srunner_add_suite (runner, chunks ());
 
     return runner;
-}
-
-
-
-/**
- * \brief   The main function.
- * \return  The number of errors occured.
- *
- * This function will run all tests.
- */
-
-int main (void)
-{
-    int         ret     = 0x0;
-    SRunner *   runner  = sr_main ();
-
-    srunner_run_all (runner, CK_NORMAL);
-    ret += srunner_ntests_failed (runner);
-    srunner_free (runner);
-
-    return ret;
 }
 
 /******************************************************************************/
