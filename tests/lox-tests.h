@@ -18,13 +18,16 @@
 
 /**
  * \author      Kevin Matthes
- * \brief       .
+ * \brief       The main header of the test library for Lox.
  * \copyright   (C) 2022 Kevin Matthes.
  *              This file is licensed GPL 2 as of June 1991.
  * \date        2022
- * \file        .h
+ * \file        lox-tests.h
  * \note        See `LICENSE' for full license.
  *              See `README.md' for project details.
+ *
+ * This header introduces all test cases, test suites and test runners which are
+ * created in order to ensure the correctness of this Lox implementation.
  */
 
 /******************************************************************************/
@@ -34,8 +37,8 @@
  */
 
 #pragma once
-#ifndef ___H__
-#define ___H__
+#ifndef __LOX__TESTS_H__
+#define __LOX__TESTS_H__
 
 
 
@@ -76,10 +79,10 @@
  */
 
 // Tidying up.
-#ifndef ___INTERNAL__
-#endif  // ! ___INTERNAL__
+#ifndef __LOX_INTERNAL__
+#endif  // ! __LOX_INTERNAL__
 
 // Leaving the header.
-#endif  // ! ___H__
+#endif  // ! __LOX__TESTS_H__
 
 /******************************************************************************/
