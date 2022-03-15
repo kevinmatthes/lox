@@ -69,7 +69,7 @@ END_TEST
  * concerning the life cycle of chunks of bytecode.
  */
 
-TCase * life_cycle (void)
+TCase * chunk_lifecycle (void)
 {
     TCase * tcase = tcase_create ("Life Cycle");
 
@@ -92,7 +92,7 @@ Suite * chunks (void)
 {
     Suite * suite = suite_create ("Chunks of Bytecode");
 
-    suite_add_tcase (suite, life_cycle ());
+    suite_add_tcase (suite, chunk_lifecycle ());
 
     return suite;
 }
