@@ -18,15 +18,15 @@
 
 /**
  * \author      Kevin Matthes
- * \brief       The main file in order to invoke all tests.
+ * \brief       Tests for the bytecode life cycle.
  * \copyright   (C) 2022 Kevin Matthes.
  *              This file is licensed GPL 2 as of June 1991.
  * \date        2022
- * \file        main.c
+ * \file        chunk_lifecycle.c
  * \note        See `LICENSE' for full license.
  *              See `README.md' for project details.
  *
- * This file will invoke all prepared tests.
+ * This file contains all tests regarding the bytecode chunk's life cycle.
  */
 
 /******************************************************************************/
@@ -76,65 +76,6 @@ TCase * chunk_lifecycle (void)
     tcase_add_test (tcase, chunk_lifecycle_0x1);
 
     return tcase;
-}
-
-
-
-/**
- * \brief   The test suite for chunks.
- * \return  The configurated test suite.
- *
- * This function will construct a new test suite in order to run all tests
- * concerning chunks of bytecode.
- */
-
-Suite * chunks (void)
-{
-    Suite * suite = suite_create ("Chunks of Bytecode");
-
-    suite_add_tcase (suite, chunk_lifecycle ());
-
-    return suite;
-}
-
-
-
-/**
- * \brief   The main test runner.
- * \return  The test runner.
- *
- * This function constructs the main test runner which will invoke all test
- * suites.
- */
-
-SRunner * sr_main (void)
-{
-    SRunner * runner = srunner_create (NULL);
-
-    srunner_add_suite (runner, chunks ());
-
-    return runner;
-}
-
-
-
-/**
- * \brief   The main function.
- * \return  The number of errors occured.
- *
- * This function will run all tests.
- */
-
-int main (void)
-{
-    int         ret     = 0x0;
-    SRunner *   runner  = sr_main ();
-
-    srunner_run_all (runner, CK_NORMAL);
-    ret += srunner_ntests_failed (runner);
-    srunner_free (runner);
-
-    return ret;
 }
 
 /******************************************************************************/
