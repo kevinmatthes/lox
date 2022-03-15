@@ -70,6 +70,25 @@ END_TEST
 
 
 /**
+ * \brief   The test case for chunk life cycles.
+ * \return  The configurated test case.
+ *
+ * This function will construct a new test case in order to run all tests
+ * concerning the life cycle of chunks of bytecode.
+ */
+
+TCase * life_cycle (void)
+{
+    TCase * tcase = tcase_create ("Life Cycle");
+
+    tcase_add_test (tcase, chunk_lifecycle_0x1);
+
+    return tcase;
+}
+
+
+
+/**
  * \brief   The test suite for chunks.
  * \return  The configurated test suite.
  *
@@ -79,12 +98,9 @@ END_TEST
 
 Suite * chunks (void)
 {
-    Suite * suite       = suite_create ("Chunks of Bytecode");
-    TCase * life_cycle  = tcase_create ("Life Cycle");
+    Suite * suite = suite_create ("Chunks of Bytecode");
 
-    tcase_add_test (life_cycle, chunk_lifecycle_0x1);
-
-    suite_add_tcase (suite, life_cycle);
+    suite_add_tcase (suite, life_cycle ());
 
     return suite;
 }
