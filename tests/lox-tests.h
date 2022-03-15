@@ -26,8 +26,8 @@
  * \note        See `LICENSE' for full license.
  *              See `README.md' for project details.
  *
- * This header introduces all test cases, test suites and test runners which are
- * created in order to ensure the correctness of this Lox implementation.
+ * This header introduces all test cases, test suites and suite runners which
+ * are created in order to ensure the correctness of this Lox implementation.
  */
 
 /******************************************************************************/
@@ -71,7 +71,14 @@
  * Function declarations.
  */
 
-// .
+// Suite runners.
+extern  SRunner *   sr_main     (void);
+
+// Test suites.
+extern  Suite *     chunks      (void);
+
+// Test cases.
+extern  TCase *     life_cycle  (void);
 
 
 
