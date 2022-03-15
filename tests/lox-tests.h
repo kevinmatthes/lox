@@ -75,10 +75,10 @@
 extern  SRunner *   sr_main (void);
 
 // Test suites.
-extern  Suite *     chunks  (void);
+extern  Suite * chunks  (void);
 
 // Test cases.
-extern  TCase *     chunk_lifecycle (void);
+extern  TCase * chunk_lifecycle (void);
 
 
 
