@@ -48,21 +48,23 @@
 
 % Software.
 compiler.self   = ' gcc ';
-
 compiler.flags  = ' -Wall -Werror -Wextra -Wpedantic ';
 compiler.flags  = [compiler.flags ' -std=c99 '];
-
 compiler.link   = ' -lcheck -lm -lpthread -lrt -lsubunit ';
 compiler.link   = [compiler.link ' -L../lib/ -llox '];
-
+compiler.link   = [compiler.link ' -L. -llox-tests '];
 compiler.call   = [compiler.self compiler.flags];
+
+octave.self = ' octave ';
 
 
 
 % Files.
-files.main.out  = './lox-tests';
-files.main.self = 'main.c';
-
+files.mklib = 'ar-create.m';
+files.mkobj = 'gcc-objects.m';
+files.out   = './lox-tests';
+files.rmlib = 'clean-libraries.m';
+files.rmobj = 'clean-objects.m';
 files.self  = 'gcc-tests.m';
 
 
@@ -74,10 +76,9 @@ failures    = 0;
 
 
 % Call adjustment.
-compiler.main   = [compiler.call files.main.self];
-compiler.main   = [compiler.main compiler.link];
-compiler.main   = [compiler.main ' -o '];
-compiler.main   = [compiler.main files.main.out];
+compiler.out   = [compiler.call compiler.link];
+compiler.out   = [compiler.out ' -o '];
+compiler.out   = [compiler.out files.out];
 
 
 
@@ -92,11 +93,19 @@ disp ([banner 'Begin build instruction.']);
 
 
 
-% Call Fortran compiler.
+% Preparations.
+system ([octave.self files.rmlib]);
+system ([octave.self files.mkobj]);
+system ([octave.self files.mklib]);
+system ([octave.self files.rmobj]);
+
+
+
+% Call C compiler.
 disp ([banner 'Compile test suites ...']);
 
-disp (compiler.main);
-system (compiler.main);
+disp (compiler.out);
+system (compiler.out);
 
 disp ([banner 'Done.']);
 
@@ -105,7 +114,7 @@ disp ([banner 'Done.']);
 % Run tests.
 disp ([banner 'Run tests ...']);
 
-failures += system (files.main.out);
+failures += system (files.out);
 
 if ~ failures;
     disp ([banner 'No failures found.']);
@@ -118,8 +127,8 @@ end;
 % Remove test applications.
 fprintf ([banner 'Remove test suites ... ']);
 
-if length (glob (files.main.out));
-    delete (files.main.out);
+if length (glob (files.out));
+    delete (files.out);
 end;
 
 disp ('Done.');
