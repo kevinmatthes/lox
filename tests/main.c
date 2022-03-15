@@ -35,16 +35,8 @@
  * Includes.
  */
 
-// The C standard library.
-#include <stdio.h>
-
-// Third party libraries.
-#include <check.h>
-
 // This project.
-#include "../lib/chunk.h"
-#include "../lib/common.h"
-#include "../lib/debug.h"
+#include "lox-tests.h"
 
 
 
