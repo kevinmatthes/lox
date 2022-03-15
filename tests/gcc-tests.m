@@ -51,8 +51,8 @@ compiler.self   = ' gcc ';
 compiler.flags  = ' -Wall -Werror -Wextra -Wpedantic ';
 compiler.flags  = [compiler.flags ' -std=c99 '];
 compiler.link   = ' -lcheck -lm -lpthread -lrt -lsubunit ';
-compiler.link   = [compiler.link ' -L../lib/ -llox '];
 compiler.link   = [compiler.link ' -L. -llox-tests '];
+compiler.link   = [compiler.link ' -L../lib/ -llox '];
 compiler.call   = [compiler.self compiler.flags];
 
 octave.self = ' octave ';
@@ -60,6 +60,7 @@ octave.self = ' octave ';
 
 
 % Files.
+files.main  = 'main.o';
 files.mklib = 'ar-create.m';
 files.mkobj = 'gcc-objects.m';
 files.out   = './lox-tests';
@@ -76,7 +77,8 @@ failures    = 0;
 
 
 % Call adjustment.
-compiler.out   = [compiler.call compiler.link];
+compiler.out   = [compiler.call files.main];
+compiler.out   = [compiler.out compiler.link];
 compiler.out   = [compiler.out ' -o '];
 compiler.out   = [compiler.out files.out];
 
@@ -97,7 +99,6 @@ disp ([banner 'Begin build instruction.']);
 system ([octave.self files.rmlib]);
 system ([octave.self files.mkobj]);
 system ([octave.self files.mklib]);
-system ([octave.self files.rmobj]);
 
 
 
@@ -125,6 +126,8 @@ end;
 
 
 % Remove test applications.
+system ([octave.self files.rmobj]);
+
 fprintf ([banner 'Remove test suites ... ']);
 
 if length (glob (files.out));
