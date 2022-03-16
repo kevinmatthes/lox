@@ -53,6 +53,7 @@
 void chunk_free (chunk_t * chunk)
 {
     FREE_ARRAY (uint8_t, chunk -> code, chunk -> capacity);
+    value_array_free (& chunk -> constants);
     chunk_init (chunk);
 
     return;
