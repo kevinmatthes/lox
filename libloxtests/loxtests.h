@@ -48,6 +48,7 @@
 
 // The C standard library.
 #include <stdio.h>
+#include <stdlib.h>
 
 // Third party libraries.
 #include <check.h>

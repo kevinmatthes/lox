@@ -22,11 +22,12 @@
  * \copyright   (C) 2022 Kevin Matthes.
  *              This file is licensed GPL 2 as of June 1991.
  * \date        2022
- * \file        chunk_lifecycle.c
+ * \file        chunk_functions.c
  * \note        See `LICENSE' for full license.
  *              See `README.md' for project details.
  *
- * This file contains all tests regarding the bytecode chunk's life cycle.
+ * This file contains all tests regarding the bytecode chunk's management
+ * functions.
  */
 
 /******************************************************************************/
@@ -41,18 +42,23 @@
 
 
 /**
- * \brief   A simple test for the chunk life cycle.
+ * \brief   A simple test for the initialisation of bytecode chunks.
  *
- * This test will check the simple chunk life cycle.
+ * This test will check whether the chunk contains sane initial values after
+ * being initialised.
  */
 
-START_TEST (chunk_lifecycle_0x1)
+START_TEST (chunk_functions_init)
 {
     chunk_t chunk;
 
     chunk_init (& chunk);
+
+    ck_assert (chunk.capacity == 0x0);
+    ck_assert (chunk.count    == 0x0);
+    ck_assert (chunk.code     == NULL);
+
     chunk_write (& chunk, OP_RETURN);
-    chunk_disassemble (& chunk, "Test 0x1");
     chunk_free (& chunk);
 
     return;
@@ -62,18 +68,18 @@ END_TEST
 
 
 /**
- * \brief   The test case for chunk life cycles.
+ * \brief   The test case for chunk management.
  * \return  The configurated test case.
  *
  * This function will construct a new test case in order to run all tests
- * concerning the life cycle of chunks of bytecode.
+ * concerning the management of chunks of bytecode.
  */
 
-TCase * chunk_lifecycle (void)
+TCase * chunk_functions (void)
 {
-    TCase * tcase = tcase_create ("Life Cycle");
+    TCase * tcase = tcase_create ("Management Functions");
 
-    tcase_add_test (tcase, chunk_lifecycle_0x1);
+    tcase_add_test (tcase, chunk_functions_init);
 
     return tcase;
 }
