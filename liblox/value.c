@@ -41,6 +41,26 @@
 
 
 /**
+ * \brief   Free a value array.
+ * \param   array   The array to free.
+ *
+ * Since the given array required the allocation of memory, this allocation
+ * should be revoked appropriately as soon as the array is not required anymore.
+ *
+ * After the freeing is complete, the array will be reinitialised.
+ */
+
+void value_array_free (value_array_t * const array)
+{
+    FREE_ARRAY (value_t, array -> values, array -> capacity);
+    value_array_init (array);
+
+    return;
+}
+
+
+
+/**
  * \brief   Construct a new value array.
  * \param   array   The array to initialise.
  *
