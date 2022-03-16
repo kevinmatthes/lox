@@ -122,7 +122,9 @@ value_array_t;
  * Function declarations.
  */
 
-// .
+extern  void    value_free  (value_array_t * array);
+extern  void    value_init  (value_array_t * const array);
+extern  void    value_write (value_array_t * const array, const value_t value);
 
 
 
