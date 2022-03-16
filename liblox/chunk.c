@@ -71,8 +71,8 @@ void chunk_free (chunk_t * chunk)
 void chunk_init (chunk_t * const chunk)
 {
     chunk -> capacity   = 0x0;
-    chunk -> count      = 0x0;
     chunk -> code       = NULL;
+    chunk -> count      = 0x0;
 
     return;
 }
