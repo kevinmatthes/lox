@@ -22,11 +22,11 @@
  * \copyright   (C) 2022 Kevin Matthes.
  *              This file is licensed GPL 2 as of June 1991.
  * \date        2022
- * \file        suites.c
+ * \file        chunks.c
  * \note        See `LICENSE' for full license.
  *              See `README.md' for project details.
  *
- * This file defines the test suites which shall bundle the defined test cases.
+ * This file defines the test suite concerning bytecode chunks.
  */
 
 /******************************************************************************/
@@ -52,6 +52,7 @@ Suite * chunks (void)
 {
     Suite * suite = suite_create ("Chunks of Bytecode");
 
+    suite_add_tcase (suite, chunk_functions ());
     suite_add_tcase (suite, chunk_lifecycle ());
 
     return suite;
