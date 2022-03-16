@@ -89,11 +89,12 @@ typedef struct
      * \brief   The count of currently held instructions.
      *
      * This field represents the count of instructions actually held by this
-     * dynamic array.  It is the count of occupied memory slots from those which
-     * are allocated.
+     * dynamic array.
+     *
+     * It is the count of occupied memory slots from those which are allocated.
      */
 
-    int         count;
+    int count;
 
 
 
@@ -101,11 +102,12 @@ typedef struct
      * \brief   The maximum count of holdable instructions.
      *
      * This field represents the count of instructions which are at most
-     * storable by this dynamic array.  It is the count of allocated memory
-     * slots in sum.
+     * storable by this dynamic array.
+     *
+     * It is the count of allocated memory slots in sum.
      */
 
-    int         capacity;
+    int capacity;
 
 
 
@@ -113,10 +115,12 @@ typedef struct
      * \brief   The bytecode sequence to process.
      *
      * This pointer points to the sequence of bytecode which shall be processed
-     * by the interpreter.  It is the memory region where the bytecode is saved.
+     * by the interpreter.
+     *
+     * It is the memory region where the bytecode is saved.
      */
 
-    uint8_t *   code;
+    uint8_t * code;
 }
 chunk_t;
 
