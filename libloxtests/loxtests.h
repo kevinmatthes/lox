@@ -79,6 +79,7 @@ extern  SRunner *   sr_main (void);
 extern  Suite * chunks  (void);
 
 // Test cases.
+extern  TCase * chunk_functions (void);
 extern  TCase * chunk_lifecycle (void);
 
 
