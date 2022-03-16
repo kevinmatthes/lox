@@ -39,8 +39,11 @@
 --
 ------------------------------------------------------------------------------->
 
-# `./tests/`
+# `./libloxtests/`
 
 This directory contains the tests for the project.
+
+The tests are intended to be compiled to a library to be linked with the `main`
+function in `../tests/` which will invoke and analyse them.
 
 <!----------------------------------------------------------------------------->
