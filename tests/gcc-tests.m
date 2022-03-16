@@ -51,7 +51,7 @@ compiler.self   = ' gcc ';
 compiler.flags  = ' -Wall -Werror -Wextra -Wpedantic ';
 compiler.flags  = [compiler.flags ' -std=c99 '];
 compiler.link   = ' -lcheck -lm -lpthread -lrt -lsubunit ';
-compiler.link   = [compiler.link ' -L. -llox-tests '];
+compiler.link   = [compiler.link ' -L. -lloxtests '];
 compiler.link   = [compiler.link ' -L../lib/ -llox '];
 compiler.call   = [compiler.self compiler.flags];
 
@@ -63,7 +63,7 @@ octave.self = ' octave ';
 files.main  = 'main.o';
 files.mklib = 'ar-create.m';
 files.mkobj = 'gcc-objects.m';
-files.out   = './lox-tests';
+files.out   = './loxtests';
 files.rmlib = 'clean-libraries.m';
 files.rmobj = 'clean-objects.m';
 files.self  = 'gcc-tests.m';

@@ -56,7 +56,7 @@ software.archiver.call  = [software.archiver.self software.archiver.flags];
 % Files.
 files.self              = ' ar-create.m ';
 
-files.library.name      = 'lox-tests';
+files.library.name      = 'loxtests';
 files.library.source    = ' *.o ';
 files.library.target    = [' lib' files.library.name '.a '];
 

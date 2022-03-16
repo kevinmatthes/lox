@@ -43,7 +43,6 @@
 # Build artifacts.
 *.a
 *.o
-lox
 
 # Documentation artifacts.
 html/
@@ -51,6 +50,7 @@ latex/
 *.pdf
 
 # Test artifacts.
-lox-tests
+lox
+loxtests
 
 ################################################################################
