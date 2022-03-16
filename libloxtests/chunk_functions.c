@@ -42,6 +42,31 @@
 
 
 /**
+ * \brief   A simple test for the freeing of bytecode chunks.
+ *
+ * This test will check whether the chunk again contains its initial values
+ * after freeing it.
+ */
+
+START_TEST (chunk_functions_free)
+{
+    chunk_t chunk;
+
+    chunk_init (& chunk);
+    chunk_write (& chunk, OP_RETURN);
+    chunk_free (& chunk);
+
+    ck_assert (chunk.capacity == 0x0);
+    ck_assert (chunk.code     == NULL);
+    ck_assert (chunk.count    == 0x0);
+
+    return;
+}
+END_TEST
+
+
+
+/**
  * \brief   A simple test for the initialisation of bytecode chunks.
  *
  * This test will check whether the chunk contains sane initial values after
@@ -105,6 +130,7 @@ TCase * chunk_functions (void)
 {
     TCase * tcase = tcase_create ("Management Functions");
 
+    tcase_add_test (tcase, chunk_functions_free);
     tcase_add_test (tcase, chunk_functions_init);
     tcase_add_test (tcase, chunk_functions_write);
 
