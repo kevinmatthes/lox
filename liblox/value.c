@@ -100,7 +100,7 @@ void value_array_write (value_array_t * const array, const value_t value)
                                          );
     };
 
-    array -> value[array -> count] = value;
+    array -> values[array -> count] = value;
     array -> count++;
 
     return;
