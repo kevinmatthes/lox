@@ -68,6 +68,52 @@ typedef double value_t;
 
 
 
+/**
+ */
+
+typedef struct
+{
+    /**
+     * \brief   The maximum count of holdable values.
+     *
+     * This field represents the count of values which are at most storable by
+     * this dynamic array.
+     *
+     * It is the count of allocated memory slots in sum.
+     */
+
+    int capacity;
+
+
+
+    /**
+     * \brief   The count of currently held values.
+     *
+     * This field represents the count of values actually held by this dynamic
+     * array.
+     *
+     * It is the count of occupied memory slots from those which are allocated.
+     */
+
+    int count;
+
+
+
+    /**
+     * \brief   The constants to store.
+     *
+     * This pointer points to the set of constants contained in the current
+     * chunk of bytecode.
+     *
+     * It is the memory region where the bytecode is saved.
+     */
+
+    value_t * values;
+}
+value_array_t;
+
+
+
 /*
  * Function declarations.
  */
