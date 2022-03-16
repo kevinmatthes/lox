@@ -39,9 +39,9 @@
 #include <stdio.h>
 
 // This project.
-#include "../lib/chunk.h"
-#include "../lib/common.h"
-#include "../lib/debug.h"
+#include "../liblox/chunk.h"
+#include "../liblox/common.h"
+#include "../liblox/debug.h"
 
 
 

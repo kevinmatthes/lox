@@ -52,7 +52,7 @@ compiler.flags  = ' -Wall -Werror -Wextra -Wpedantic ';
 compiler.flags  = [compiler.flags ' -std=c99 '];
 compiler.link   = ' -lcheck -lm -lpthread -lrt -lsubunit ';
 compiler.link   = [compiler.link ' -L../libloxtests/ -lloxtests '];
-compiler.link   = [compiler.link ' -L../lib/ -llox '];
+compiler.link   = [compiler.link ' -L../liblox/ -llox '];
 compiler.call   = [compiler.self compiler.flags];
 
 octave.self = ' octave ';

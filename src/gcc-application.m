@@ -48,7 +48,7 @@
 
 % Software.
 software.compiler.self  = ' gcc ';
-software.compiler.link  = ' -L../lib/ -llox ';
+software.compiler.link  = ' -L../liblox/ -llox ';
 
 software.compiler.flags = ' -Wall -Werror -Wextra -Wpedantic -std=c99 ';
 software.compiler.flags = [software.compiler.flags ' -D__LOX_INTERNAL__ '];

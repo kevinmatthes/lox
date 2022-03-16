@@ -52,7 +52,7 @@ octave.self = 'octave';
 
 
 % Directories.
-directories.lib = './lib/';
+directories.lib = './liblox/';
 
 
 

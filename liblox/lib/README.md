@@ -39,7 +39,7 @@
 --
 ------------------------------------------------------------------------------->
 
-# `./lib/`
+# `./liblox/`
 
 This directory contains the kernel of the Lox coding language.
 

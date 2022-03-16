@@ -52,7 +52,7 @@ software.octave = 'octave';
 
 
 % Directories.
-directories.lib     = './lib/';
+directories.lib     = './liblox/';
 directories.test    = './tests/';
 
 
