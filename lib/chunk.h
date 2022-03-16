@@ -86,6 +86,18 @@ opcode_t;
 typedef struct
 {
     /**
+     * \brief   The count of currently held instructions.
+     *
+     * This field represents the count of instructions actually held by this
+     * dynamic array.  It is the count of occupied memory slots from those which
+     * are allocated.
+     */
+
+    int         count;
+
+
+
+    /**
      * \brief   The maximum count of holdable instructions.
      *
      * This field represents the count of instructions which are at most
@@ -94,18 +106,6 @@ typedef struct
      */
 
     int         capacity;
-
-
-
-    /**
-     * \brief   The count of currently held instructions.
-     *
-     * This field represents the count instructions actually held by this
-     * dynamic array.  It is the count of occupied memory slots from those which
-     * are allocated.
-     */
-
-    int         count;
 
 
 
