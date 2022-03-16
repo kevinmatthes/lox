@@ -35,14 +35,25 @@
  * Includes.
  */
 
-// .
+// This project.
+#include "value.h"
 
 
 
 /**
+ * \brief   Construct a new value array.
+ * \param   array   The array to initialise.
  *
+ * This function will prepare the given array with sane initial values.
  */
 
-// .
+void value_init (value_array_t * array)
+{
+    array -> capacity   = 0x0;
+    array -> count      = 0x0;
+    array -> values     = NULL;
+
+    return;
+}
 
 /******************************************************************************/
