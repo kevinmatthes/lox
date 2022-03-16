@@ -133,7 +133,7 @@ typedef struct
      * code causing this chunk of bytecode.
      */
 
-    value_array_t values;
+    value_array_t constants;
 }
 chunk_t;
 
