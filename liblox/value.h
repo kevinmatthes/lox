@@ -45,7 +45,8 @@
  * Includes.
  */
 
-// .
+// This project.
+#include "common.h"
 
 
 
@@ -54,6 +55,16 @@
  */
 
 // .
+
+
+
+/**
+ * \brief   The data structure for Lox values.
+ *
+ * This data structure will represent the possible values in Lox.
+ */
+
+typedef double value_t;
 
 
 
