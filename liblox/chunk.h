@@ -123,6 +123,17 @@ typedef struct
      */
 
     uint8_t * code;
+
+
+
+    /**
+     * \brief   The values introduced by this piece bytecode.
+     *
+     * This value array saves the constants which occur in the section of source
+     * code causing this chunk of bytecode.
+     */
+
+    value_array_t values;
 }
 chunk_t;
 
