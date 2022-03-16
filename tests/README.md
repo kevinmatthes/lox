@@ -43,7 +43,7 @@
 
 This directory contains the `main` function for the tests of the project.
 
-It will be linked against the library defined in `../libloxtests` in order to
+It will be linked against the library defined in `../libloxtests/` in order to
 invoke and evaluate them.
 
 <!----------------------------------------------------------------------------->
