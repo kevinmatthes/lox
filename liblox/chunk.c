@@ -74,7 +74,7 @@ void chunk_init (chunk_t * const chunk)
     chunk -> code       = NULL;
     chunk -> count      = 0x0;
 
-    value_array_init (chunk -> constants);
+    value_array_init (& chunk -> constants);
 
     return;
 }
