@@ -69,6 +69,10 @@ typedef double value_t;
 
 
 /**
+ * \brief   The constant storage.
+ *
+ * This data structure stores the constant values which are introduced in a
+ * certain chunk of bytecode.
  */
 
 typedef struct
@@ -105,7 +109,7 @@ typedef struct
      * This pointer points to the set of constants contained in the current
      * chunk of bytecode.
      *
-     * It is the memory region where the bytecode is saved.
+     * It is the memory region where the values are saved.
      */
 
     value_t * values;
