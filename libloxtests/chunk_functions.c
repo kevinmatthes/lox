@@ -55,10 +55,36 @@ START_TEST (chunk_functions_init)
     chunk_init (& chunk);
 
     ck_assert (chunk.capacity == 0x0);
-    ck_assert (chunk.count    == 0x0);
     ck_assert (chunk.code     == NULL);
+    ck_assert (chunk.count    == 0x0);
 
     chunk_write (& chunk, OP_RETURN);
+    chunk_free (& chunk);
+
+    return;
+}
+END_TEST
+
+
+
+/**
+ * \brief   A simple test for the writing of bytecode chunks.
+ *
+ * This test will check whether the chunk still contains its initial values
+ * after appending an instruction to it.
+ */
+
+START_TEST (chunk_functions_write)
+{
+    chunk_t chunk;
+
+    chunk_init (& chunk);
+    chunk_write (& chunk, OP_RETURN);
+
+    ck_assert (chunk.capacity != 0x0);
+    ck_assert (chunk.code     != NULL);
+    ck_assert (chunk.count    != 0x0);
+
     chunk_free (& chunk);
 
     return;
@@ -80,6 +106,7 @@ TCase * chunk_functions (void)
     TCase * tcase = tcase_create ("Management Functions");
 
     tcase_add_test (tcase, chunk_functions_init);
+    tcase_add_test (tcase, chunk_functions_write);
 
     return tcase;
 }
