@@ -51,7 +51,7 @@ compiler.self   = ' gcc ';
 compiler.flags  = ' -Wall -Werror -Wextra -Wpedantic ';
 compiler.flags  = [compiler.flags ' -std=c99 '];
 compiler.link   = ' -lcheck -lm -lpthread -lrt -lsubunit ';
-compiler.link   = [compiler.link ' -L. -lloxtests '];
+compiler.link   = [compiler.link ' -L../libloxtests/ -lloxtests '];
 compiler.link   = [compiler.link ' -L../lib/ -llox '];
 compiler.call   = [compiler.self compiler.flags];
 
@@ -59,8 +59,13 @@ octave.self = ' octave ';
 
 
 
+% Directories.
+directories.libloxtests = '../libloxtests/';
+
+
+
 % Files.
-files.main  = 'main.o';
+files.main  = 'main.c';
 files.mklib = 'ar-create.m';
 files.mkobj = 'gcc-objects.m';
 files.out   = './loxtests';
@@ -96,9 +101,12 @@ disp ([banner 'Begin build instruction.']);
 
 
 % Preparations.
+directories.self = cd (directories.libloxtests);
 system ([octave.self files.rmlib]);
 system ([octave.self files.mkobj]);
 system ([octave.self files.mklib]);
+system ([octave.self files.rmobj]);
+cd (directories.self);
 
 
 
@@ -126,8 +134,6 @@ end;
 
 
 % Remove test applications.
-system ([octave.self files.rmobj]);
-
 fprintf ([banner 'Remove test suites ... ']);
 
 if length (glob (files.out));

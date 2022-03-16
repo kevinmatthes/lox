@@ -36,7 +36,7 @@
  */
 
 // This project.
-#include "lox-tests.h"
+#include "../libloxtests/loxtests.h"
 
 
 
