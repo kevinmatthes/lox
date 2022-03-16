@@ -56,4 +56,34 @@ void value_array_init (value_array_t * array)
     return;
 }
 
+
+
+/**
+ * \brief   Append a value to a certain value array.
+ * \param   array   The array to append a value to.
+ * \param   value   The value to append.
+ *
+ * This function will add a given value to a certain value array.
+ */
+
+void value_array_write (value_array_t * const array, const value_t value)
+{
+    if (array -> capacity < array -> count + 0x1)
+    {
+        const int old_capacity = array -> capacity;
+
+        array -> capacity   = GROW_CAPACITY (old_capacity);
+        array -> values     = GROW_ARRAY ( value_t
+                                         , array -> values
+                                         , old_capacity
+                                         , array -> capacity
+                                         );
+    };
+
+    array -> value[array -> count] = value;
+    array -> count++;
+
+    return;
+}
+
 /******************************************************************************/
