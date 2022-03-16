@@ -51,6 +51,7 @@
 // This project.
 #include "common.h"
 #include "memory.h"
+#include "value.h"
 
 
 
