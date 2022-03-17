@@ -109,7 +109,7 @@ void chunk_init (chunk_t * const chunk)
  * This function will add a given instruction to a certain chunk of bytecode.
  */
 
-void chunk_write (chunk_t * const chunk, const uint8_t byte)
+void chunk_write (chunk_t * const chunk, const uint8_t byte, const int line)
 {
     if (chunk -> capacity < chunk -> count + 0x1)
     {
