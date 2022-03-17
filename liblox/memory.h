@@ -109,10 +109,10 @@
  * Function declarations.
  */
 
-extern  void *  reallocate  ( void * const  pointer
-                            , const size_t  old_size
-                            , const size_t  new_size
-                            );
+extern  void *  memory_reallocate   ( void * const  pointer
+                                    , const size_t  old_size
+                                    , const size_t  new_size
+                                    );
 
 
 
