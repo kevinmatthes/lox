@@ -128,6 +128,17 @@ typedef struct
 
 
     /**
+     * \brief   The line information.
+     *
+     * Each instruction appears on a certain line.  This array helps in case of
+     * compilation errors to easily determine in which region the error occured.
+     */
+
+    int * lines;
+
+
+
+    /**
      * \brief   The values introduced by this piece bytecode.
      *
      * This value array saves the constants which occur in the section of source
