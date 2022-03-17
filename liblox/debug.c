@@ -84,7 +84,7 @@ int constant_instruction ( const char * const       name
     value_print (chunk -> constants.values[constant], stderr);
     fprintf (stderr, "'\n");
 
-    return;
+    return offset + 0x2;
 }
 
 
