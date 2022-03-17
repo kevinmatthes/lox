@@ -41,45 +41,6 @@
 
 
 /**
- * \brief   Append a constant to a bytecode chunk's value array.
- * \param   chunk   The chunk to append a constant to.
- * \param   value   The value to add to the chunk.
- * \return  The index of the constant just added.
- *
- * This function will add a given constant to a certain chunk of bytecode.
- */
-
-inline int chunk_add_const (chunk_t * const chunk, const value_t value)
-{
-    value_array_write (& chunk -> constants, value);
-    return chunk -> constants.count - 0x1;
-}
-
-
-
-/**
- * \brief   Free a chunk of bytecode.
- * \param   chunk   The chunk to free.
- *
- * Since the given chunk required the allocation of memory, this allocation
- * should be revoked appropriately as soon as the chunk is not required anymore.
- *
- * After the freeing is complete, the chunk will be reinitialised.
- */
-
-void chunk_free (chunk_t * chunk)
-{
-    FREE_ARRAY (uint8_t, chunk -> code, chunk -> capacity);
-    FREE_ARRAY (int, chunk -> lines, chunk -> capacity);
-    value_array_free (& chunk -> constants);
-    chunk_init (chunk);
-
-    return;
-}
-
-
-
-/**
  * \brief   Construct a new chunk of bytecode.
  * \param   chunk   The chunk to initialise.
  *
@@ -95,44 +56,6 @@ void chunk_init (chunk_t * const chunk)
     chunk -> lines      = NULL;
 
     value_array_init (& chunk -> constants);
-
-    return;
-}
-
-
-
-/**
- * \brief   Append an instruction to a certain chunk of bytecode.
- * \param   chunk   The chunk to append a byte to.
- * \param   byte    The byte to append to the chunk.
- * \param   line    The line where this instruction occurs.
- *
- * This function will add a given instruction to a certain chunk of bytecode.
- */
-
-void chunk_write (chunk_t * const chunk, const uint8_t byte, const int line)
-{
-    if (chunk -> capacity < chunk -> count + 0x1)
-    {
-        const int old_capacity = chunk -> capacity;
-
-        chunk -> capacity   = GROW_CAPACITY (old_capacity);
-        chunk -> code       = GROW_ARRAY ( uint8_t
-                                         , chunk -> code
-                                         , old_capacity
-                                         , chunk -> capacity
-                                         );
-        chunk -> lines      = GROW_ARRAY ( int
-                                         , chunk -> lines
-                                         , old_capacity
-                                         , chunk -> capacity
-                                         );
-    };
-
-    chunk -> code[chunk -> count]   = byte;
-    chunk -> lines[chunk -> count]  = line;
-
-    chunk -> count++;
 
     return;
 }
