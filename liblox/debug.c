@@ -86,6 +86,10 @@ int disassemble_instruction (const chunk_t * const chunk, const int offset)
             ret = 0x1;
             break;
 
+        case OP_CONSTANT:
+            ret = constant_instruction ("OP_CONSTANT", chunk, offset);
+            break;
+
         case OP_RETURN:
             ret = simple_instruction ("OP_RETURN", offset);
             break;
