@@ -106,4 +106,21 @@ void value_array_write (value_array_t * const array, const value_t value)
     return;
 }
 
+
+
+/**
+ * \brief   Write a constant to the given stream.
+ * \param   value   The value to write to the given stream.
+ * \param   stream  The stream to write the given value to.
+ *
+ * This function can be used in order to output the given constant to a certain
+ * stream.
+ */
+
+inline void value_print (const value_t value, const FILE * stream)
+{
+    fprintf (stream, "%g", value);
+    return;
+}
+
 /******************************************************************************/
