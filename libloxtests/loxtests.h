@@ -46,10 +46,6 @@
  * Includes.
  */
 
-// The C standard library.
-#include <stdio.h>
-#include <stdlib.h>
-
 // Third party libraries.
 #include <check.h>
 
@@ -57,6 +53,8 @@
 #include "../liblox/chunk.h"
 #include "../liblox/common.h"
 #include "../liblox/debug.h"
+#include "../liblox/memory.h"
+#include "../liblox/value.h"
 
 
 
