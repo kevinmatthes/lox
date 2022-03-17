@@ -75,10 +75,11 @@ invoked by calling `repository-manual.m`.
 
 | Requirement       | Type          | Role                                  |
 |:------------------|:-------------:|:--------------------------------------|
+| `ar`              | application   | create and update static libraries    |
 | Check             | library       | C unit tests                          |
 | `docs-snippets`   | repository    | documentation constants               |
 | Doxygen           | application   | creation of source code documentation |
-| `gcc`             | application   | C compiler                            |
+| GCC               | application   | C compiler                            |
 | GNU Octave        | application   | execution of the provided scripts     |
 | `make`            | application   | finalisation of Doxygen documentation |
 | Pandoc            | application   | compilation of repository manual      |
