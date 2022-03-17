@@ -128,7 +128,9 @@ void chunk_write (chunk_t * const chunk, const uint8_t byte, const int line)
                                          );
     };
 
-    chunk -> code[chunk -> count] = byte;
+    chunk -> code[chunk -> count]   = byte;
+    chunk -> lines[chunk -> count]  = line;
+    
     chunk -> count++;
 
     return;
