@@ -124,9 +124,9 @@ START_TEST (chunk_functions_write)
     ck_assert (chunk.count    != 0x0);
     ck_assert (chunk.lines    != NULL);
 
-    ck_assert (chunk.constants.capacity != 0x0);
-    ck_assert (chunk.constants.count    != 0x0);
-    ck_assert (chunk.constants.values   != NULL);
+    ck_assert (chunk.constants.capacity == 0x0);
+    ck_assert (chunk.constants.count    == 0x0);
+    ck_assert (chunk.constants.values   == NULL);
 
     chunk_free (& chunk);
 
