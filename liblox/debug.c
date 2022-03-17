@@ -56,7 +56,7 @@ void debug_disassemble_chunk ( const chunk_t * const    chunk
 
     for ( int i = 0x0
         ; i < chunk -> count
-        ; i = disassemble_instruction (chunk, i)
+        ; i = debug_disassemble_instruction (chunk, i)
         );
 
     return;
@@ -123,11 +123,11 @@ int debug_disassemble_instruction ( const chunk_t * const   chunk
             break;
 
         case OP_CONSTANT:
-            ret = constant_instruction ("OP_CONSTANT", chunk, offset);
+            ret = debug_constant_instruction ("OP_CONSTANT", chunk, offset);
             break;
 
         case OP_RETURN:
-            ret = simple_instruction ("OP_RETURN", offset);
+            ret = debug_simple_instruction ("OP_RETURN", offset);
             break;
     };
 
