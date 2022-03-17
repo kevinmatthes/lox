@@ -64,7 +64,7 @@
  */
 
 #define FREE_ARRAY(t, p, o) \
-    reallocate ((p), sizeof (t) * (o), 0x0)
+    memory_reallocate ((p), sizeof (t) * (o), 0x0)
 
 
 
@@ -83,7 +83,7 @@
  */
 
 #define GROW_ARRAY(t, p, o, n) \
-    (t *) reallocate ((p), sizeof (t) * (o), sizeof (t) * (n))
+    (t *) memory_reallocate ((p), sizeof (t) * (o), sizeof (t) * (n))
 
 
 
