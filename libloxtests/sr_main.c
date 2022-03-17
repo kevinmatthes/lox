@@ -18,7 +18,7 @@
 
 /**
  * \author      Kevin Matthes
- * \brief       The runners in order to invoke tests.
+ * \brief       The main runner in order to invoke all tests.
  * \copyright   (C) 2022 Kevin Matthes.
  *              This file is licensed GPL 2 as of June 1991.
  * \date        2022
