@@ -132,7 +132,7 @@ extern  void    value_array_init    (value_array_t * const array);
 extern  void    value_array_write   ( value_array_t * const array
                                     , const value_t         value
                                     );
-extern  void    value_print         (const value_t value, const FILE * stream);
+extern  void    value_print         (const value_t value, FILE * const stream);
 
 
 

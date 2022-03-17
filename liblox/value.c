@@ -117,7 +117,7 @@ void value_array_write (value_array_t * const array, const value_t value)
  * stream.
  */
 
-inline void value_print (const value_t value, const FILE * stream)
+inline void value_print (const value_t value, FILE * const stream)
 {
     fprintf (stream, "%g", value);
     return;
