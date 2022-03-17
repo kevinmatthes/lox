@@ -65,7 +65,7 @@ directories.libloxtests = '../libloxtests/';
 
 
 % Files.
-files.main  = 'main.c';
+files.main  = 'tests.c';
 files.mklib = 'ar-create.m';
 files.mkobj = 'gcc-objects.m';
 files.out   = './loxtests';
