@@ -44,6 +44,7 @@
  * \brief   Append a constant to a bytecode chunk's value array.
  * \param   chunk   The chunk to append a constant to.
  * \param   value   The value to add to the chunk.
+ * \return  The index of the constant just added.
  *
  * This function will add a given constant to a certain chunk of bytecode.
  */
