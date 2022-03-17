@@ -63,6 +63,25 @@ void chunk_disassemble (const chunk_t * const chunk, const char * const name)
 
 
 /**
+ */
+
+int constant_instruction ( const char * const       name
+                         , const chunk_t * const    chunk
+                         , const int                offset
+                         )
+{
+    const uint8_t constant = chunk -> code[offset + 0x1];
+
+    fprintf (stderr, "%-16s %4x '", name, constant);
+    value_print (chunk -> constants.values[constant]);
+    fprintf (stderr, "'\n");
+
+    return;
+}
+
+
+
+/**
  * \brief   Explain the purpose of a certain instruction.
  * \param   chunk   The chunk to analyse the instructions of.
  * \param   offset  The index of the intruction to examine.
