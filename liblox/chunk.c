@@ -70,6 +70,7 @@ inline int chunk_add_const (chunk_t * const chunk, const value_t value)
 void chunk_free (chunk_t * chunk)
 {
     FREE_ARRAY (uint8_t, chunk -> code, chunk -> capacity);
+    FREE_ARRAY (int, chunk -> lines, chunk -> capacity);
     value_array_free (& chunk -> constants);
     chunk_init (chunk);
 
