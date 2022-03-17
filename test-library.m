@@ -52,7 +52,8 @@ software.octave = 'octave';
 
 
 % Directories.
-directories.lib     = './liblox/';
+directories.lib1    = './liblox/';
+directories.lib2    = './libloxtests/';
 directories.test    = './src/';
 
 
@@ -94,7 +95,11 @@ cd (directories.current);
 
 
 % Clean up libraries.
-cd (directories.lib);
+directories.current = cd (directories.lib1);
+system ([software.octave ' ' files.rmlib]);
+cd (directories.current);
+
+cd (directories.lib2);
 system ([software.octave ' ' files.rmlib]);
 
 
