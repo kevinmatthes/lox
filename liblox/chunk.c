@@ -105,6 +105,7 @@ void chunk_init (chunk_t * const chunk)
  * \brief   Append an instruction to a certain chunk of bytecode.
  * \param   chunk   The chunk to append a byte to.
  * \param   byte    The byte to append to the chunk.
+ * \param   line    The line where this instruction occurs.
  *
  * This function will add a given instruction to a certain chunk of bytecode.
  */
@@ -130,7 +131,7 @@ void chunk_write (chunk_t * const chunk, const uint8_t byte, const int line)
 
     chunk -> code[chunk -> count]   = byte;
     chunk -> lines[chunk -> count]  = line;
-    
+
     chunk -> count++;
 
     return;
