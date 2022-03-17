@@ -43,6 +43,7 @@
 
 /**
  * \brief   A simple test for the freeing of bytecode chunks.
+ * \return  Nothing.
  *
  * This test will check whether the chunk again contains its initial values
  * after freeing it.
@@ -68,6 +69,7 @@ END_TEST
 
 /**
  * \brief   A simple test for the initialisation of bytecode chunks.
+ * \return  Nothing.
  *
  * This test will check whether the chunk contains sane initial values after
  * being initialised.
@@ -94,6 +96,7 @@ END_TEST
 
 /**
  * \brief   A simple test for the writing of bytecode chunks.
+ * \return  Nothing.
  *
  * This test will check whether the chunk still contains its initial values
  * after appending an instruction to it.

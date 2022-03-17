@@ -42,6 +42,7 @@
 
 /**
  * \brief   A simple test for the chunk life cycle.
+ * \return  Nothing.
  *
  * This test will check the simple chunk life cycle.
  */
