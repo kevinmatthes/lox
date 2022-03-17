@@ -18,7 +18,7 @@
 
 /**
  * \author      Kevin Matthes
- * \brief       Tests for the bytecode life cycle.
+ * \brief       Tests for the bytecode utilities.
  * \copyright   (C) 2022 Kevin Matthes.
  *              This file is licensed GPL 2 as of June 1991.
  * \date        2022
@@ -60,6 +60,11 @@ START_TEST (chunk_functions_free)
     ck_assert (chunk.capacity == 0x0);
     ck_assert (chunk.code     == NULL);
     ck_assert (chunk.count    == 0x0);
+    ck_assert (chunk.lines    == NULL);
+
+    ck_assert (chunk.constants.capacity == 0x0);
+    ck_assert (chunk.constants.count    == 0x0);
+    ck_assert (chunk.constants.values   == NULL);
 
     return;
 }
@@ -84,6 +89,11 @@ START_TEST (chunk_functions_init)
     ck_assert (chunk.capacity == 0x0);
     ck_assert (chunk.code     == NULL);
     ck_assert (chunk.count    == 0x0);
+    ck_assert (chunk.lines    == NULL);
+
+    ck_assert (chunk.constants.capacity == 0x0);
+    ck_assert (chunk.constants.count    == 0x0);
+    ck_assert (chunk.constants.values   == NULL);
 
     chunk_write (& chunk, OP_RETURN, 0x7b);
     chunk_free (& chunk);
@@ -112,6 +122,11 @@ START_TEST (chunk_functions_write)
     ck_assert (chunk.capacity != 0x0);
     ck_assert (chunk.code     != NULL);
     ck_assert (chunk.count    != 0x0);
+    ck_assert (chunk.lines    != NULL);
+
+    ck_assert (chunk.constants.capacity != 0x0);
+    ck_assert (chunk.constants.count    != 0x0);
+    ck_assert (chunk.constants.values   != NULL);
 
     chunk_free (& chunk);
 
