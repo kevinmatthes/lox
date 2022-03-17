@@ -87,7 +87,6 @@ files.source        = [files.source files.newpage];
 files.source        = [files.source ' ./liblox/README.md '];
 files.source        = [files.source ' ./libloxtests/README.md '];
 files.source        = [files.source ' ./src/README.md '];
-files.source        = [files.source ' ./tests/README.md '];
 files.source        = [files.source files.newpage];
 files.source        = [files.source files.license];
 files.source        = [files.source files.newpage];
