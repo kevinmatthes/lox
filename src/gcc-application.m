@@ -22,7 +22,7 @@
 %%      gcc-application.m
 %%
 %%  BRIEF
-%%      Create a target application from sources using `gcc`.
+%%      Create a target application from sources using GCC.
 %%
 %%  AUTHOR
 %%      Kevin Matthes

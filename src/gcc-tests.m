@@ -22,7 +22,7 @@
 %%      gcc-tests.m
 %%
 %%  BRIEF
-%%      Test the provided Fortran source code using `gcc`.
+%%      Test the provided C source code using GCC.
 %%
 %%  AUTHOR
 %%      Kevin Matthes

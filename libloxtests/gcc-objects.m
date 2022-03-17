@@ -22,7 +22,7 @@
 %%      gcc-objects.m
 %%
 %%  BRIEF
-%%      Create object files from C source code using `gcc`.
+%%      Create object files from C source code using GCC.
 %%
 %%  AUTHOR
 %%      Kevin Matthes
