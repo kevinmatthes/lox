@@ -53,7 +53,7 @@ START_TEST (chunk_lifecycle_0x1)
 
     chunk_init (& chunk);
     chunk_write (& chunk, OP_RETURN, 0x7b);
-    chunk_disassemble (& chunk, "Test 0x1");
+    debug_disassemble_chunk (& chunk, "Test 0x1");
     chunk_free (& chunk);
 
     return;
@@ -80,7 +80,7 @@ START_TEST (chunk_lifecycle_0x2)
     chunk_write (& chunk, constant, 0x7b);
 
     chunk_write (& chunk, OP_RETURN, 0x7b);
-    chunk_disassemble (& chunk, "Test 0x2");
+    debug_disassemble_chunk (& chunk, "Test 0x2");
     chunk_free (& chunk);
 
     return;
