@@ -43,4 +43,9 @@
 
 This is the main source code directory of the repository.
 
+It contains the `main` functions for both the Lox compiler as well as its test
+suite invocation tool.  The former one results from being linked against the
+library from `../liblox/` while the latter one will be linked against the
+automatically created library from `../libloxtests/`.
+
 <!----------------------------------------------------------------------------->
