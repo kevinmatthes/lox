@@ -41,6 +41,22 @@
 
 
 /**
+ * \brief   Append a constant to a bytecode chunk's value array.
+ * \param   chunk   The chunk to append a constant to.
+ * \param   value   The value to add to the chunk.
+ *
+ * This function will add a given constant to a certain chunk of bytecode.
+ */
+
+inline int chunk_add_const (chunk_t * const chunk, const value_t value)
+{
+    value_array_write (& chunk -> constants, value);
+    return chunk -> constants.count - 0x1;
+}
+
+
+
+/**
  * \brief   Free a chunk of bytecode.
  * \param   chunk   The chunk to free.
  *
