@@ -68,6 +68,10 @@
 extern  void    chunk_disassemble       ( const chunk_t * const chunk
                                         , const char * const    name
                                         );
+extern  int     constant_instruction    ( const char * const    name
+                                        , const chunk_t * const chunk
+                                        , const int             offset
+                                        );
 extern  int     disassemble_instruction ( const chunk_t * const chunk
                                         , const int             offset
                                         );
