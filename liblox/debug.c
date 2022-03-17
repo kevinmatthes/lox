@@ -48,7 +48,9 @@
  * This function will prompt the content of a bytecode sequence to the user.
  */
 
-void chunk_disassemble (const chunk_t * const chunk, const char * const name)
+void debug_disassemble_chunk ( const chunk_t * const    chunk
+                             , const char * const       name
+                             )
 {
     fprintf (stderr, "== %s ==\n", name);
 
@@ -73,10 +75,10 @@ void chunk_disassemble (const chunk_t * const chunk, const char * const name)
  * to store.
  */
 
-int constant_instruction ( const char * const       name
-                         , const chunk_t * const    chunk
-                         , const int                offset
-                         )
+int debug_constant_instruction ( const char * const       name
+                               , const chunk_t * const    chunk
+                               , const int                offset
+                               )
 {
     const uint8_t constant = chunk -> code[offset + 0x1];
 
@@ -99,7 +101,9 @@ int constant_instruction ( const char * const       name
  * of bytecode contains to the user.
  */
 
-int disassemble_instruction (const chunk_t * const chunk, const int offset)
+int debug_disassemble_instruction ( const chunk_t * const   chunk
+                                  , const int               offset
+                                  )
 {
     const uint8_t   instruction = chunk -> code[offset];
     int             ret         = 0x0;
@@ -142,7 +146,7 @@ int disassemble_instruction (const chunk_t * const chunk, const int offset)
  * operands.  Hence, the offset to its successing operation is always 1.
  */
 
-inline int simple_instruction (const char * const name, const int offset)
+inline int debug_simple_instruction (const char * const name, const int offset)
 {
     fprintf (stderr, "%s\n", name);
     return offset + 0x1;
