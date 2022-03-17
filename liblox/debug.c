@@ -63,6 +63,14 @@ void chunk_disassemble (const chunk_t * const chunk, const char * const name)
 
 
 /**
+ * \brief   Determine the offset for a constant instruction.
+ * \param   name    The instruction's identifier.
+ * \param   chunk   The chunk to disassemble.
+ * \param   offset  The index of the given instruction.
+ * \return  The index of the succeeding instruction.
+ *
+ * A constant instruction contains the opcode as well as the corresponding value
+ * to store.
  */
 
 int constant_instruction ( const char * const       name
