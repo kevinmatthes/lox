@@ -106,6 +106,11 @@ int disassemble_instruction (const chunk_t * const chunk, const int offset)
 
     fprintf (stderr, "%04x ", offset);
 
+    if (offset && chunk -> lines[offset] == chunk -> lines[offset - 0x1])
+        fprintf (stderr, "   | ");
+    else
+        fprintf (stderr, "%4d ", chunk -> lines[offset]);
+
     switch (instruction)
     {
         default:
