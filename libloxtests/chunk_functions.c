@@ -54,7 +54,7 @@ START_TEST (chunk_functions_free)
     chunk_t chunk;
 
     chunk_init (& chunk);
-    chunk_write (& chunk, OP_RETURN);
+    chunk_write (& chunk, OP_RETURN, 0x7b);
     chunk_free (& chunk);
 
     ck_assert (chunk.capacity == 0x0);
@@ -85,7 +85,7 @@ START_TEST (chunk_functions_init)
     ck_assert (chunk.code     == NULL);
     ck_assert (chunk.count    == 0x0);
 
-    chunk_write (& chunk, OP_RETURN);
+    chunk_write (& chunk, OP_RETURN, 0x7b);
     chunk_free (& chunk);
 
     return;
@@ -107,7 +107,7 @@ START_TEST (chunk_functions_write)
     chunk_t chunk;
 
     chunk_init (& chunk);
-    chunk_write (& chunk, OP_RETURN);
+    chunk_write (& chunk, OP_RETURN, 0x7b);
 
     ck_assert (chunk.capacity != 0x0);
     ck_assert (chunk.code     != NULL);

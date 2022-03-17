@@ -52,7 +52,7 @@ START_TEST (chunk_lifecycle_0x1)
     chunk_t chunk;
 
     chunk_init (& chunk);
-    chunk_write (& chunk, OP_RETURN);
+    chunk_write (& chunk, OP_RETURN, 0x7b);
     chunk_disassemble (& chunk, "Test 0x1");
     chunk_free (& chunk);
 
@@ -76,10 +76,10 @@ START_TEST (chunk_lifecycle_0x2)
     chunk_init (& chunk);
 
     const int constant  = chunk_add_const (& chunk, 1.2);
-    chunk_write (& chunk, OP_CONSTANT);
-    chunk_write (& chunk, constant);
+    chunk_write (& chunk, OP_CONSTANT, 0x7b);
+    chunk_write (& chunk, constant, 0x7b);
 
-    chunk_write (& chunk, OP_RETURN);
+    chunk_write (& chunk, OP_RETURN, 0x7b);
     chunk_disassemble (& chunk, "Test 0x2");
     chunk_free (& chunk);
 
