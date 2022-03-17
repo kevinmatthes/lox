@@ -121,6 +121,11 @@ void chunk_write (chunk_t * const chunk, const uint8_t byte, const int line)
                                          , old_capacity
                                          , chunk -> capacity
                                          );
+        chunk -> lines      = GROW_ARRAY ( int
+                                         , chunk -> lines
+                                         , old_capacity
+                                         , chunk -> capacity
+                                         );
     };
 
     chunk -> code[chunk -> count] = byte;
