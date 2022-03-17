@@ -91,6 +91,7 @@ void chunk_init (chunk_t * const chunk)
     chunk -> capacity   = 0x0;
     chunk -> code       = NULL;
     chunk -> count      = 0x0;
+    chunk -> lines      = NULL;
 
     value_array_init (& chunk -> constants);
 
