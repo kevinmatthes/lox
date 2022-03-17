@@ -45,9 +45,6 @@
  * Includes.
  */
 
-// The C standard library.
-#include <stdlib.h>
-
 // This project.
 #include "common.h"
 

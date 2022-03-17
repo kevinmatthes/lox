@@ -47,7 +47,6 @@
 
 // The C standard library.
 #include <stdio.h>
-#include <stdlib.h>
 
 // This project.
 #include "common.h"
