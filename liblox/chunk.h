@@ -160,6 +160,10 @@ extern  void    chunk_write     ( chunk_t * const   chunk
                                 , const uint8_t     byte
                                 , const int         line
                                 );
+extern  void    chunk_write_constant    ( chunk_t * const   chunk
+                                        , const value_t     value
+                                        , const int         line
+                                        );
 
 
 
