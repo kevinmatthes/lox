@@ -70,6 +70,10 @@ extern  int     debug_constant_instruction      ( const char * const    name
                                                 , const chunk_t * const chunk
                                                 , const int             offset
                                                 );
+extern  int     debug_constant32_instruction    ( const char * const    name
+                                                , const chunk_t * const chunk
+                                                , const int             offset
+                                                );
 extern  void    debug_disassemble_chunk         ( const chunk_t * const chunk
                                                 , const char * const    name
                                                 );
