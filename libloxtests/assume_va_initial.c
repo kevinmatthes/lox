@@ -18,7 +18,7 @@
 
 /**
  * \author      Kevin Matthes
- * \brief       Assumption concerning the bytecode chunks.
+ * \brief       Assumption concerning the value arrays.
  * \copyright   (C) 2022 Kevin Matthes.
  *              This file is licensed GPL 2 as of June 1991.
  * \date        2022
@@ -26,7 +26,7 @@
  * \note        See `LICENSE' for full license.
  *              See `README.md' for project details.
  *
- * This file implements testing utilities concerning the bytecode chunk data
+ * This file implements testing utilities concerning the value array data
  * structure.
  */
 
@@ -42,20 +42,19 @@
 
 
 /**
- * \brief   Check whether a given chunk still has its initial state.
- * \param   chunk   The chunk to test
+ * \brief   Check whether a given value array still has its initial state.
+ * \param   va  The value array to test.
  *
- * The unit tests for the bytecode chunks frequently require to check whether a
- * certain chunk was already edited or not.  This function will abbreviate the
+ * The unit tests for the value arrays frequently require to check whether a
+ * certain array was already edited or not.  This function will abbreviate the
  * testing code.
  */
 
-void assume_chunk_initial (const chunk_t * const chunk)
+void assume_chunk_initial (const value_array_t * const va)
 {
-    ck_assert (chunk -> capacity == 0x0);
-    ck_assert (chunk -> code     == NULL);
-    ck_assert (chunk -> count    == 0x0);
-    ck_assert (chunk -> lines    == NULL);
+    ck_assert (va -> capacity == 0x0);
+    ck_assert (va -> count    == 0x0);
+    ck_assert (va -> values   == NULL);
 
     return;
 }

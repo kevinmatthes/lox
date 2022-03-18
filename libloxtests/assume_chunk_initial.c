@@ -43,7 +43,7 @@
 
 /**
  * \brief   Check whether a given chunk still has its initial state.
- * \param   chunk   The chunk to test
+ * \param   chunk   The chunk to test.
  *
  * The unit tests for the bytecode chunks frequently require to check whether a
  * certain chunk was already edited or not.  This function will abbreviate the
