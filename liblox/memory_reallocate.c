@@ -50,9 +50,9 @@
  * This function manages all memory demands of the contained data structures.
  */
 
-void * memory_reallocate ( void * const    pointer
-                         , const size_t    old_size
-                         , const size_t    new_size
+void * memory_reallocate ( void * const pointer
+                         , const size_t old_size
+                         , const size_t new_size
                          )
 {
     void * ret = NULL;

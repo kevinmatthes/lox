@@ -51,9 +51,9 @@
  * to store.
  */
 
-int debug_constant_instruction ( const char * const       name
-                               , const chunk_t * const    chunk
-                               , const int                offset
+int debug_constant_instruction ( const char * const     name
+                               , const chunk_t * const  chunk
+                               , const int              offset
                                )
 {
     const uint8_t constant = chunk -> code[offset + 0x1];

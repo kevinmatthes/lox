@@ -49,9 +49,9 @@
  * This function will add a given value to a certain chunk of bytecode.
  */
 
-void chunk_write_const ( chunk_t * const chunk
-                       , const value_t   value
-                       , const int       line
+void chunk_write_const ( chunk_t * const    chunk
+                       , const value_t      value
+                       , const int          line
                        )
 {
     const uint32_t  index   = (uint32_t) chunk_add_const (chunk, value);
