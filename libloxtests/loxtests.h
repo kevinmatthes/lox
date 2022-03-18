@@ -71,7 +71,9 @@
  */
 
 // Assumptions.
+extern  void    assume_chunk_edited     (const chunk_t * const chunk);
 extern  void    assume_chunk_initial    (const chunk_t * const chunk);
+extern  void    assume_va_edited        (const value_array_t * const va);
 extern  void    assume_va_initial       (const value_array_t * const va);
 
 // Suite runners.
