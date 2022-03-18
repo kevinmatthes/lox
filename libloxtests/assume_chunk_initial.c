@@ -42,94 +42,22 @@
 
 
 /**
- * \brief   A simple test for the chunk life cycle.
- * \return  Nothing.
+ * \brief   Check whether a given chunk still has its initial state.
+ * \param   chunk   The chunk to test
  *
- * This test will check the simple chunk life cycle.
+ * The unit test for the bytecode chunks frequently require to check whether a
+ * certain chunk was already edited or not.  This function will abbreviate the
+ * testing code.
  */
 
-START_TEST (chunk_lifecycle_0x1)
+void assume_chunk_initial (const chunk_t * const chunk)
 {
-    chunk_t chunk;
-
-    chunk_init (& chunk);
-    chunk_write (& chunk, OP_RETURN, 0x7b);
-    debug_disassemble_chunk (& chunk, "Test 0x1");
-    chunk_free (& chunk);
+    ck_assert (chunk -> capacity == 0x0);
+    ck_assert (chunk -> code     == NULL);
+    ck_assert (chunk -> count    == 0x0);
+    ck_assert (chunk -> lines    == NULL);
 
     return;
-}
-END_TEST
-
-
-
-/**
- * \brief   A simple test for the chunk life cycle.
- * \return  Nothing.
- *
- * This test will check the simple chunk life cycle.
- */
-
-START_TEST (chunk_lifecycle_0x2)
-{
-    chunk_t chunk;
-
-    chunk_init (& chunk);
-
-    const int constant  = chunk_add_const (& chunk, 1.2);
-    chunk_write (& chunk, OP_CONSTANT, 0x7b);
-    chunk_write (& chunk, constant, 0x7b);
-
-    chunk_write (& chunk, OP_RETURN, 0x7b);
-    debug_disassemble_chunk (& chunk, "Test 0x2");
-    chunk_free (& chunk);
-
-    return;
-}
-END_TEST
-
-
-
-/**
- * \brief   A simple test for the chunk life cycle.
- * \return  Nothing.
- *
- * This test will check the simple chunk life cycle.
- */
-
-START_TEST (chunk_lifecycle_0x3)
-{
-    chunk_t chunk;
-
-    chunk_init (& chunk);
-    chunk_write_const (& chunk, 1.2, 0x7b);
-    chunk_write (& chunk, OP_RETURN, 0x7b);
-    debug_disassemble_chunk (& chunk, "Test 0x3");
-    chunk_free (& chunk);
-
-    return;
-}
-END_TEST
-
-
-
-/**
- * \brief   The test case for chunk life cycles.
- * \return  The configurated test case.
- *
- * This function will construct a new test case in order to run all tests
- * concerning the life cycle of chunks of bytecode.
- */
-
-TCase * chunk_lifecycle (void)
-{
-    TCase * tcase = tcase_create ("Life Cycle");
-
-    tcase_add_test (tcase, chunk_lifecycle_0x1);
-    tcase_add_test (tcase, chunk_lifecycle_0x2);
-    tcase_add_test (tcase, chunk_lifecycle_0x3);
-
-    return tcase;
 }
 
 /******************************************************************************/
