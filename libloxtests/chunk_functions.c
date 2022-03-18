@@ -42,6 +42,36 @@
 
 
 /**
+ * \brief   A simple test for the writing of bytecode chunks.
+ * \return  Nothing.
+ *
+ * This test will check whether the chunk still contains its initial values
+ * after appending a normal constant to it.
+ */
+
+START_TEST (chunk_functions_add_const)
+{
+    chunk_t chunk;
+
+    chunk_init (& chunk);
+
+    const int index = chunk_add_const (& chunk, 1.2);
+    chunk_write (& chunk, OP_CONSTANT, 0x7b);
+    chunk_write (& chunk, index, 0x7b);
+
+    assume_chunk_edited (& chunk);
+    assume_va_edited (& chunk.constants);
+
+    chunk_write (& chunk, OP_RETURN, 0x7b);
+    chunk_free (& chunk);
+
+    return;
+}
+END_TEST
+
+
+
+/**
  * \brief   A simple test for the freeing of bytecode chunks.
  * \return  Nothing.
  *
@@ -119,6 +149,33 @@ END_TEST
 
 
 /**
+ * \brief   A simple test for the writing of bytecode chunks.
+ * \return  Nothing.
+ *
+ * This test will check whether the chunk still contains its initial values
+ * after appending a long constant to it.
+ */
+
+START_TEST (chunk_functions_write_const)
+{
+    chunk_t chunk;
+
+    chunk_init (& chunk);
+    chunk_write_const (& chunk, 1.2, 0x7b);
+
+    assume_chunk_edited (& chunk);
+    assume_va_edited (& chunk.constants);
+
+    chunk_write (& chunk, OP_RETURN, 0x7b);
+    chunk_free (& chunk);
+
+    return;
+}
+END_TEST
+
+
+
+/**
  * \brief   The test case for chunk management.
  * \return  The configurated test case.
  *
@@ -130,9 +187,11 @@ TCase * chunk_functions (void)
 {
     TCase * tcase = tcase_create ("Management Functions");
 
+    tcase_add_test (tcase, chunk_functions_add_const);
     tcase_add_test (tcase, chunk_functions_free);
     tcase_add_test (tcase, chunk_functions_init);
     tcase_add_test (tcase, chunk_functions_write);
+    tcase_add_test (tcase, chunk_functions_write_const);
 
     return tcase;
 }
