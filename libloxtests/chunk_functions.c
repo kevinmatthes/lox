@@ -107,10 +107,7 @@ START_TEST (chunk_functions_write)
     chunk_init (& chunk);
     chunk_write (& chunk, OP_RETURN, 0x7b);
 
-    ck_assert (chunk.capacity != 0x0);
-    ck_assert (chunk.code     != NULL);
-    ck_assert (chunk.count    != 0x0);
-    ck_assert (chunk.lines    != NULL);
+    assume_chunk_edited (& chunk);
     assume_va_initial (& chunk.constants);
 
     chunk_free (& chunk);
