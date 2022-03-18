@@ -58,7 +58,7 @@ int debug_constant_instruction ( const char * const       name
 {
     const uint8_t constant = chunk -> code[offset + 0x1];
 
-    fprintf (stderr, "%-16s %4x '", name, constant);
+    fprintf (stderr, "%-16s %16x '", name, constant);
     value_print (chunk -> constants.values[constant], stderr);
     fprintf (stderr, "'\n");
 
