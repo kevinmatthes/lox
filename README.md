@@ -98,4 +98,49 @@ the manual for this repository and attach the entire license to it.  The
 resulting file, `repository.pdf`, will be saved in the main directory of this
 repository.
 
+## Description
+
+This implementation follows the **bytecode interpreter** approach but differs
+from the suggested one regarding various details.  *Hence, this is no standard
+Lox* but extending it.
+
+### Differences to the Standard Implementation
+
+#### Hexadecimal Numbers
+
+This implementation uses the hexadecimal representation of integer numbers
+whenever possible and useful in both implementation and printed output.  One
+exception to this rule is the line output in the bytecode disassembler which
+will be made using the decimal representation in order to avoid confusion.
+
+Although this compiler is built around hexadecimal numbers, it does not support
+them, yet.
+
+#### `OP_CONSTANT_32` -- `OP_CONSTANT_LONG` with 32 Bits
+
+This compiler provides the extended storage range for constants, introduced in
+challenge 14.2 by the further opcode instruction `OP_CONSTANT_LONG`.  But in
+contrast to the original suggestion, it uses 32 instead of just 24 bits for this
+instruction.
+
+One reason for this decision was the better portability since `uint32_t` is a
+native type declared by `stdint.h` such that the solution of this challenge can
+be realised with a standard primitive instead of artificial types.
+
+Furthermore, 4294967296 instead of 16777216 constants are possible, now.  This
+was the second reason to decide against the suggested 24 bits for this
+representation and to use more instead.
+
+Since the language definition itself suggests a further constant like at least
+`OP_CONSTANT_16` after the introduction of challenge 14.2, the chosen
+implementation of it is named accordingly in order to reflect the provided count
+of bits directly by its name.
+
+### Solved Challanges
+
+This implementation solved the following challenges suggested in the language
+definition:
+
+* Challenge 14.2 (`OP_CONSTANT_LONG`)
+
 <!----------------------------------------------------------------------------->
