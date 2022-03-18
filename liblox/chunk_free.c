@@ -50,7 +50,7 @@
  * After the freeing is complete, the chunk will be reinitialised.
  */
 
-void chunk_free (chunk_t * chunk)
+void chunk_free (chunk_t * const chunk)
 {
     FREE_ARRAY (uint8_t, chunk -> code, chunk -> capacity);
     FREE_ARRAY (int, chunk -> lines, chunk -> capacity);
