@@ -101,7 +101,6 @@ START_TEST (chunk_lifecycle_0x3)
     chunk_t chunk;
 
     chunk_init (& chunk);
-
     chunk_write_const (& chunk, 1.2, 0x7b);
     chunk_write (& chunk, OP_RETURN, 0x7b);
     debug_disassemble_chunk (& chunk, "Test 0x3");
