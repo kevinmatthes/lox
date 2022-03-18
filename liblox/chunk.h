@@ -70,6 +70,7 @@
 typedef enum
 {
     OP_CONSTANT,            /*!< Add a constant to the value array.           */
+    OP_CONSTANT_32,         /*!< Add more constants.                          */
     OP_RETURN               /*!< Leave a function.                            */
 }
 opcode_t;
