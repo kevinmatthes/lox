@@ -54,6 +54,19 @@ void chunk_write_const ( chunk_t * const chunk
                        , const int       line
                        )
 {
+    const uint32_t  index   = (uint32_t) chunk_add_const (chunk, value);
+    uint32_t        mask    = 0xff000000;
+
+    chunk_write (chunk, OP_CONSTANT_32, line);
+
+    for (int i = 0x0; i < 0x4; i++)
+    {
+        const uint8_t byte = (uint8_t) ((mask & index) >> 0x8 * (0x3 - i));
+
+        chunk_write (chunk, byte, line);
+        mask >>= 0x8;
+    };
+
     return;
 }
 
