@@ -42,7 +42,7 @@
 
 
 /**
- * \brief   A simple test for the writing of bytecode chunks.
+ * \brief   A simple test for the writing of constants to bytecode chunks.
  * \return  Nothing.
  *
  * This test will check whether the chunk still contains its initial values
@@ -149,7 +149,7 @@ END_TEST
 
 
 /**
- * \brief   A simple test for the writing of bytecode chunks.
+ * \brief   A simple test for the writing of constants to bytecode chunks.
  * \return  Nothing.
  *
  * This test will check whether the chunk still contains its initial values
