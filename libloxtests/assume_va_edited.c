@@ -22,7 +22,7 @@
  * \copyright   (C) 2022 Kevin Matthes.
  *              This file is licensed GPL 2 as of June 1991.
  * \date        2022
- * \file        assume_chunk_initial.c
+ * \file        assume_chunk_edited.c
  * \note        See `LICENSE' for full license.
  *              See `README.md' for project details.
  *
@@ -50,11 +50,11 @@
  * testing code.
  */
 
-void assume_va_initial (const value_array_t * const va)
+void assume_va_edited (const value_array_t * const va)
 {
-    ck_assert (va -> capacity == 0x0);
-    ck_assert (va -> count    == 0x0);
-    ck_assert (va -> values   == NULL);
+    ck_assert (va -> capacity != 0x0);
+    ck_assert (va -> count    != 0x0);
+    ck_assert (va -> values   != NULL);
 
     return;
 }
