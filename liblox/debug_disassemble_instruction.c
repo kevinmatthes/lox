@@ -75,6 +75,13 @@ int debug_disassemble_instruction ( const chunk_t * const   chunk
             ret = debug_constant_instruction ("OP_CONSTANT", chunk, offset);
             break;
 
+        case OP_CONSTANT_32:
+            ret = debug_constant32_instruction ( "OP_CONSTANT_32"
+                                               , chunk
+                                               , offset
+                                               );
+            break;
+
         case OP_RETURN:
             ret = debug_simple_instruction ("OP_RETURN", offset);
             break;
