@@ -42,6 +42,8 @@
 
 # Build artifacts.
 *.a
+*.gcda
+*.gcno
 *.o
 
 # Documentation artifacts.
