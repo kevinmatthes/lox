@@ -58,10 +58,7 @@ START_TEST (chunk_functions_free)
     chunk_free (& chunk);
 
     assume_chunk_initial (& chunk);
-
-    ck_assert (chunk.constants.capacity == 0x0);
-    ck_assert (chunk.constants.count    == 0x0);
-    ck_assert (chunk.constants.values   == NULL);
+    assume_va_initial (& chunk.constants);
 
     return;
 }
@@ -84,10 +81,7 @@ START_TEST (chunk_functions_init)
     chunk_init (& chunk);
 
     assume_chunk_initial (& chunk);
-
-    ck_assert (chunk.constants.capacity == 0x0);
-    ck_assert (chunk.constants.count    == 0x0);
-    ck_assert (chunk.constants.values   == NULL);
+    assume_va_initial (& chunk.constants);
 
     chunk_write (& chunk, OP_RETURN, 0x7b);
     chunk_free (& chunk);
@@ -117,10 +111,7 @@ START_TEST (chunk_functions_write)
     ck_assert (chunk.code     != NULL);
     ck_assert (chunk.count    != 0x0);
     ck_assert (chunk.lines    != NULL);
-
-    ck_assert (chunk.constants.capacity == 0x0);
-    ck_assert (chunk.constants.count    == 0x0);
-    ck_assert (chunk.constants.values   == NULL);
+    assume_va_initial (& chunk.constants);
 
     chunk_free (& chunk);
 
