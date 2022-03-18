@@ -90,6 +90,30 @@ END_TEST
 
 
 /**
+ * \brief   A simple test for the chunk life cycle.
+ * \return  Nothing.
+ *
+ * This test will check the simple chunk life cycle.
+ */
+
+START_TEST (chunk_lifecycle_0x3)
+{
+    chunk_t chunk;
+
+    chunk_init (& chunk);
+
+    chunk_write_const (& chunk, 1.2, 0x7b);
+    chunk_write (& chunk, OP_RETURN, 0x7b);
+    debug_disassemble_chunk (& chunk, "Test 0x3");
+    chunk_free (& chunk);
+
+    return;
+}
+END_TEST
+
+
+
+/**
  * \brief   The test case for chunk life cycles.
  * \return  The configurated test case.
  *
@@ -103,6 +127,7 @@ TCase * chunk_lifecycle (void)
 
     tcase_add_test (tcase, chunk_lifecycle_0x1);
     tcase_add_test (tcase, chunk_lifecycle_0x2);
+    tcase_add_test (tcase, chunk_lifecycle_0x3);
 
     return tcase;
 }
