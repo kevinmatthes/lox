@@ -47,7 +47,7 @@
  * This function will prepare the given array with sane initial values.
  */
 
-void value_array_init (value_array_t * array)
+void value_array_init (value_array_t * const array)
 {
     array -> capacity   = 0x0;
     array -> count      = 0x0;
