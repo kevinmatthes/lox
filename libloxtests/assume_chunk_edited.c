@@ -22,7 +22,7 @@
  * \copyright   (C) 2022 Kevin Matthes.
  *              This file is licensed GPL 2 as of June 1991.
  * \date        2022
- * \file        assume_chunk_initial.c
+ * \file        assume_chunk_edited.c
  * \note        See `LICENSE' for full license.
  *              See `README.md' for project details.
  *
@@ -50,12 +50,12 @@
  * testing code.
  */
 
-void assume_chunk_initial (const chunk_t * const chunk)
+void assume_chunk_edited (const chunk_t * const chunk)
 {
-    ck_assert (chunk -> capacity == 0x0);
-    ck_assert (chunk -> code     == NULL);
-    ck_assert (chunk -> count    == 0x0);
-    ck_assert (chunk -> lines    == NULL);
+    ck_assert (chunk -> capacity != 0x0);
+    ck_assert (chunk -> code     != NULL);
+    ck_assert (chunk -> count    != 0x0);
+    ck_assert (chunk -> lines    != NULL);
 
     return;
 }
