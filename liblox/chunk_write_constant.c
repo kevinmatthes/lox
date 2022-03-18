@@ -22,7 +22,7 @@
  * \copyright   (C) 2022 Kevin Matthes.
  *              This file is licensed GPL 2 as of June 1991.
  * \date        2022
- * \file        chunk_write.c
+ * \file        chunk_write_const.c
  * \note        See `LICENSE' for full license.
  *              See `README.md' for project details.
  *
@@ -41,38 +41,19 @@
 
 
 /**
- * \brief   Append an instruction to a certain chunk of bytecode.
- * \param   chunk   The chunk to append a byte to.
- * \param   byte    The byte to append to the chunk.
+ * \brief   Append the instruction for an `OP_CONSTANT_32` value.
+ * \param   chunk   The chunk to append a value to.
+ * \param   value   The value to append to the chunk.
  * \param   line    The line where this instruction occurs.
  *
- * This function will add a given instruction to a certain chunk of bytecode.
+ * This function will add a given value to a certain chunk of bytecode.
  */
 
-void chunk_write (chunk_t * const chunk, const uint8_t byte, const int line)
+void chunk_write_const ( chunk_t * const chunk
+                       , const value_t   value
+                       , const int       line
+                       )
 {
-    if (chunk -> capacity < chunk -> count + 0x1)
-    {
-        const int old_capacity = chunk -> capacity;
-
-        chunk -> capacity   = GROW_CAPACITY (old_capacity);
-        chunk -> code       = GROW_ARRAY ( uint8_t
-                                         , chunk -> code
-                                         , old_capacity
-                                         , chunk -> capacity
-                                         );
-        chunk -> lines      = GROW_ARRAY ( int
-                                         , chunk -> lines
-                                         , old_capacity
-                                         , chunk -> capacity
-                                         );
-    };
-
-    chunk -> code[chunk -> count]   = byte;
-    chunk -> lines[chunk -> count]  = line;
-
-    chunk -> count++;
-
     return;
 }
 
