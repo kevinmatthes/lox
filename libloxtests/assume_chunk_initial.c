@@ -18,15 +18,16 @@
 
 /**
  * \author      Kevin Matthes
- * \brief       Tests for the bytecode life cycle.
+ * \brief       Assumption concerning the bytecode chunks.
  * \copyright   (C) 2022 Kevin Matthes.
  *              This file is licensed GPL 2 as of June 1991.
  * \date        2022
- * \file        chunk_lifecycle.c
+ * \file        assume_chunk_initial.c
  * \note        See `LICENSE' for full license.
  *              See `README.md' for project details.
  *
- * This file contains all tests regarding the bytecode chunk's life cycle.
+ * This file implements testing utilities concerning the bytecode chunk data
+ * structure.
  */
 
 /******************************************************************************/
