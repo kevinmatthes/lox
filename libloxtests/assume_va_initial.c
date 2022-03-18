@@ -50,7 +50,7 @@
  * testing code.
  */
 
-void assume_chunk_initial (const value_array_t * const va)
+void assume_va_initial (const value_array_t * const va)
 {
     ck_assert (va -> capacity == 0x0);
     ck_assert (va -> count    == 0x0);
