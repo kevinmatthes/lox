@@ -22,7 +22,7 @@
  * \copyright   (C) 2022 Kevin Matthes.
  *              This file is licensed GPL 2 as of June 1991.
  * \date        2022
- * \file        debug_constant_instruction.c
+ * \file        debug_constant32_instruction.c
  * \note        See `LICENSE' for full license.
  *              See `README.md' for project details.
  *
@@ -51,18 +51,26 @@
  * to store.
  */
 
-int debug_constant_instruction ( const char * const       name
-                               , const chunk_t * const    chunk
-                               , const int                offset
-                               )
+int debug_constant32_instruction ( const char * const       name
+                                 , const chunk_t * const    chunk
+                                 , const int                offset
+                                 )
 {
-    const uint8_t constant = chunk -> code[offset + 0x1];
+    const uint8_t   byte1       = chunk -> code[offset + 0x1];
+    const uint8_t   byte2       = chunk -> code[offset + 0x2];
+    const uint8_t   byte3       = chunk -> code[offset + 0x3];
+    const uint8_t   byte4       = chunk -> code[offset + 0x4];
 
-    fprintf (stderr, "%-16s %4x '", name, constant);
+    const uint32_t  constant    = (byte1 << 0x18)
+                                | (byte2 << 0x10)
+                                | (byte3 << 0x8)
+                                | byte4;
+
+    fprintf (stderr, "%-16s %16x '", name, constant);
     value_print (chunk -> constants.values[constant], stderr);
     fprintf (stderr, "'\n");
 
-    return offset + 0x2;
+    return offset + 0x5;
 }
 
 /******************************************************************************/
