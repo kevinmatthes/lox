@@ -71,8 +71,8 @@
  */
 
 // Assumptions.
-extern  bool    assume_chunk_initial        (const chunk_t * const chunk);
-extern  bool    assume_value_array_initial  (const value_array_t * const va);
+extern  bool    assume_chunk_initial    (const chunk_t * const chunk);
+extern  bool    assume_va_initial       (const value_array_t * const va);
 
 // Suite runners.
 extern  SRunner *   sr_main (void);
