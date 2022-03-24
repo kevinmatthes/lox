@@ -66,7 +66,7 @@ int debug_constant32_instruction ( const char * const       name
                                 | (byte3 << 0x8)
                                 | byte4;
 
-    fprintf (stderr, "%-16s %16x '", name, constant);
+    fprintf (stderr, "%-16s %8x '", name, constant);
     value_print (chunk -> constants.values[constant], stderr);
     fprintf (stderr, "'\n");
 
